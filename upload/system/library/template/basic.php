@@ -8,6 +8,8 @@ final class Basic {
 	}
 	
 	public function render($template) {
+	     global $registry;
+	     
 		$file = DIR_TEMPLATE . $template;
 
 		if (file_exists($file)) {

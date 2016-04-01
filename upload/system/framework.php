@@ -35,7 +35,13 @@ if ($config->get('session_autostart')) {
 // Cache 
 $registry->set('cache', new Cache($config->get('cache_type'), $config->get('cache_expire')));
 
-// Url
+//Unlimited colors theme
+
+require_once(DIR_SYSTEM . 'library/themeoptions.php');
+$theme_options = new ThemeOptions();
+$registry->set('theme_options', $theme_options);
+
+
 $registry->set('url', new Url($config->get('site_ssl')));
 
 // Language
