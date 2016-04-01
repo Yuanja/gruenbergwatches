@@ -208,7 +208,9 @@ class ControllerCommonMenu extends Controller {
 			'amazonus' => $this->config->get('openbay_amazonus_status'),
 			'etsy' => $this->config->get('etsy_status'),
 		);
-
+		$data['catalog_refresh'] = $this->url->link('catalog/refresh', 'token=' . $this->session->data['token'], true);
+		$data['text_catalog_refresh'] = 'refresh catalog';
+		
 		return $this->load->view('common/menu', $data);
 	}
 }

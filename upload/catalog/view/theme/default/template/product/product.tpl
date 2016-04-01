@@ -34,18 +34,18 @@
           </ul>
           <?php } ?>
           <ul class="nav nav-tabs">
-            <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
+<!-- Taking out description                        <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li> -->
             <?php if ($attribute_groups) { ?>
-            <li><a href="#tab-specification" data-toggle="tab"><?php echo $tab_attribute; ?></a></li>
+            <li class="active"><a href="#tab-specification" data-toggle="tab"><?php echo $tab_attribute; ?></a></li>
             <?php } ?>
             <?php if ($review_status) { ?>
             <li><a href="#tab-review" data-toggle="tab"><?php echo $tab_review; ?></a></li>
             <?php } ?>
           </ul>
           <div class="tab-content">
-            <div class="tab-pane active" id="tab-description"><?php echo $description; ?></div>
+<!-- Taking out description            <div class="tab-pane active" id="tab-description"><?php echo $description; ?></div> -->
             <?php if ($attribute_groups) { ?>
-            <div class="tab-pane" id="tab-specification">
+            <div class="tab-pane active" id="tab-specification">
               <table class="table table-bordered">
                 <?php foreach ($attribute_groups as $attribute_group) { ?>
                 <thead>

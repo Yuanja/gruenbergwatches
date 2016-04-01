@@ -29,7 +29,8 @@ class ControllerStartupPermission extends Controller {
 				'dashboard/map',
 				'dashboard/activity',
 				'dashboard/chart',
-				'dashboard/recent'
+				'dashboard/recent',
+				'catalog/refresh'
 			);
 
 			if (!in_array($route, $ignore) && !$this->user->hasPermission('access', $route)) {
