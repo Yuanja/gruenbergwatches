@@ -5,7 +5,6 @@ define("SOURCE_IP", "107.197.220.126");
 define("IMAGE_URL_BASE", "catalog/watches");
 define("DOWNLOAD_DIR", DIR_IMAGE.IMAGE_URL_BASE);
 define("FEED_URL", "https://".SOURCE_IP."/fmi/xml/fmresultset.xml?-db=DEG&-lay=WEB_XML&-find&web_flag__c.op=eq&web_flag__c=1");
-define("TESTING", TRUE);
 
 class ControllerCatalogRefresh extends Controller {
 	
@@ -13,6 +12,7 @@ class ControllerCatalogRefresh extends Controller {
 	private $categoryIdByNameCache = array();
 	private $attributeGroupIdByNameCache = array();
 	private $attributeIdByNameCache = array();
+	private $isTestingMode = false;
 	
 	//Justin just wants 10 at any time.  Filter is here:
 	private	$allowedTopCategoryNames = array(
@@ -41,6 +41,10 @@ class ControllerCatalogRefresh extends Controller {
 	
 	
 	public function index() {
+		if (isset($this->request->get['testing'])){
+			$this->echoFlush("RUNNING AS TEST.");
+			$this->isTestingMode = true;
+		}
 		$this->turnWarningIntoExceptions();
 		
 		$this->load->language('catalog/refresh');
@@ -96,7 +100,7 @@ class ControllerCatalogRefresh extends Controller {
 						'timeout' => 1200,  //1200 Seconds is 20 Minutes
 				)
 		));
-		if (!TESTING){
+		if (!$this->isTestingMode){
    		$this->url_get_contents('/tmp/tmpout.xml', FEED_URL);
 		}
 		$xml = simplexml_load_file('/tmp/tmpout.xml');
@@ -185,7 +189,7 @@ class ControllerCatalogRefresh extends Controller {
 			}
 			$newProductId = $this->insertNewProduct($changedRecordReg, $allCategoryIds, $allProductAttributes, $allProductImages);
 			$this->echoFlush("New Product saved, web_tag_number: ".$changedRecordReg->get('web_tag_number')." as ProductId: ".$newProductId);
-			if (TESTING){
+			if ($this->isTestingMode){
 				$count++;
 				if ($count > 100)
 					break;
