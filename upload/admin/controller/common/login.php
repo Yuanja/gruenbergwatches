@@ -9,6 +9,7 @@ class ControllerCommonLogin extends Controller {
 
 		if ($this->request->get['route'] == 'catalog/refresh'){
 			//Make exception for refresh
+			$this->session->start();
 			$this->response->redirect($this->url->link('catalog/refresh', 'token='.$this->session->data['token'], true));
 		}
 		
