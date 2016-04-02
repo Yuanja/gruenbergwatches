@@ -18,7 +18,8 @@ class ControllerModuleLatest extends Controller {
 		$data['products'] = array();
 
 		$filter_data = array(
-			'sort'  => 'p.date_added',
+			//'sort'  => 'p.date_added',
+			'sort' => 'p.sku',
 			'order' => 'DESC',
 			'start' => 0,
 			'limit' => $setting['limit']
