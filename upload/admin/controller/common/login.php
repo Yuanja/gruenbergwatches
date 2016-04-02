@@ -6,12 +6,6 @@ class ControllerCommonLogin extends Controller {
 		$this->load->language('common/login');
 
 		$this->document->setTitle($this->language->get('heading_title'));
-
-		if ($this->request->get['route'] == 'catalog/refresh'){
-			//Make exception for refresh
-			$this->session->start();
-			$this->response->redirect($this->url->link('catalog/refresh', 'token='.$this->session->data['token'], true));
-		}
 		
 		if ($this->user->isLogged() && isset($this->request->get['token']) && ($this->request->get['token'] == $this->session->data['token'])) {
 			$this->response->redirect($this->url->link('common/dashboard', 'token=' . $this->session->data['token'], true));
