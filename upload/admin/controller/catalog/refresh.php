@@ -13,6 +13,7 @@ class ControllerCatalogRefresh extends Controller {
 	private $attributeGroupIdByNameCache = array();
 	private $attributeIdByNameCache = array();
 	private $isTestingMode = false;
+	private $reloadLastFeed = false;
 	
 	//Justin just wants 10 at any time.  Filter is here:
 	private	$allowedTopCategoryNames = array(
@@ -45,6 +46,12 @@ class ControllerCatalogRefresh extends Controller {
 			$this->echoFlush("RUNNING AS TEST.");
 			$this->isTestingMode = true;
 		}
+		
+		if (isset($this->request->get['reloadLastFeed'])){
+			$this->echoFlush("Skipping download feed, using last feed..");
+			$this->reloadLastFeed = true;
+		}
+		
 		$this->turnWarningIntoExceptions();
 		
 		$this->load->language('catalog/refresh');
@@ -92,15 +99,15 @@ class ControllerCatalogRefresh extends Controller {
 	}
 	
 	public function readFromFeed() {
-		$this->echoFlush("Reading from source...<br>");
-		
-		//Set timeout to 20min
-		$ctx = stream_context_create(array('http'=>
-				array(
-						'timeout' => 1200,  //1200 Seconds is 20 Minutes
-				)
-		));
-		if (!$this->isTestingMode){
+		if (!$this->reloadLastFeed){
+			$this->echoFlush("Reading from source...<br>");
+			
+			//Set timeout to 20min
+			$ctx = stream_context_create(array('http'=>
+					array(
+							'timeout' => 1200,  //1200 Seconds is 20 Minutes
+					)
+			));
    		$this->url_get_contents('/tmp/tmpout.xml', FEED_URL);
 		}
 		$xml = simplexml_load_file('/tmp/tmpout.xml');
@@ -251,8 +258,8 @@ class ControllerCatalogRefresh extends Controller {
 		array_push($productAttributes, $this->getAttributeArrayElement("web_watch_box_papers", "Box and Papers", 110, $changedRecordReg, "None"));
 		array_push($productAttributes, $this->getAttributeArrayElement("web_watch_condition", "Condition", 120, $changedRecordReg));
 		array_push($productAttributes, $this->getAttributeArrayElement("web_tag_number", "Sku", 125, $changedRecordReg));
-		array_push($productAttributes, $this->getAttributeArrayElement("web_price_retail", "Retail Price", 130, $changedRecordReg));
-		array_push($productAttributes, $this->getAttributeArrayElement("web_price_sale", "Sale Price", 140, $changedRecordReg));
+//		array_push($productAttributes, $this->getAttributeArrayElement("web_price_retail", "Retail Price", 130, $changedRecordReg));
+//		array_push($productAttributes, $this->getAttributeArrayElement("web_price_sale", "Sale Price", 140, $changedRecordReg));
 		
 		
 		return array_filter($productAttributes);
@@ -458,7 +465,7 @@ class ControllerCatalogRefresh extends Controller {
 				."date_available = NOW(), "  
 				."manufacturer_id = '" . (int)$manufacture_id ."', " 
 				."shipping = '0', "  
-				."price = '" . (float)str_replace("$", "", $changedRecordReg->get('web_price_sale')). "', " 
+				."price = '" . (float)str_replace("$", "", $changedRecordReg->get('web_price_retail')). "', " 
 				."points = '0', "  
 				."weight = '0', "   
 				."weight_class_id = '1', "  
@@ -647,7 +654,7 @@ class ControllerCatalogRefresh extends Controller {
 		$product_price = $product['price'];
 		
 		//TODO: deeper comparison
-		if ((float)str_replace("$", "", $recordReg->get('web_price_sale')) != $product_price){
+		if ((float)str_replace("$", "", $recordReg->get('web_price_retail')) != $product_price){
 			return true;
 		}
 		

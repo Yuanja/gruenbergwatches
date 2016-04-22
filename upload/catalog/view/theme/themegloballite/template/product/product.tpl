@@ -431,7 +431,6 @@ include('catalog/view/theme/'.$config->get($config->get('config_theme') . '_dire
   		echo '<div id="'.$id.'" class="tab-content">'.$tab['content'].'</div>';
   	}
   } ?>
-  <div id="tab-description" class="tab-content" itemprop="description"><?php echo $description; ?></div>
   <?php if ($attribute_groups) { ?>
   <div id="tab-attribute" class="tab-content">
     <table class="attribute" cellspacing="0">
