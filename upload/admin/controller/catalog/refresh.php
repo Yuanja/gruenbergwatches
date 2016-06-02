@@ -1,4 +1,6 @@
 <?php
+//URL parameters options: testing=1 sets the test mode which loads full feed but only gets 100 watches.
+//reloadLastFeed=1 skips the feed xml download and reuse the last one.
 define("CATEGORY_DELIMETER", "&nbsp;&nbsp;&gt;&nbsp;&nbsp;");
 define("WATCH_ATTRIBUTE_GROUP", "Watch attributes");
 define("SOURCE_IP", "107.197.220.126");
@@ -117,8 +119,6 @@ class ControllerCatalogRefresh extends Controller {
 			$changedRecordsRegArray = $this->getChangedRecordsArray($recordValueRegArray);
 			$this->saveChangedRecords($changedRecordsRegArray);
 			$this->deleteProductNotInFeed($recordValueRegArray);
-			//update featured/recently added
-			$this->updateFeaturedProducts();
 		} else {
 			$this->echoFlush("WARNING: Something wrong with the feed size! Nothing read!");
 		}
@@ -169,14 +169,6 @@ class ControllerCatalogRefresh extends Controller {
 		}
 	}
 	
-	private function updateFeaturedProducts(){
-		//Select the top 20 items ordered by product 
-		$this->echoFlush("Updating featured products section.");
-		$this->load->model('catalog/product');
-		$this->model_catalog_product->updateFeaturedPrduct();
-	}
-	
-	
 	private function saveChangedRecords($changedRecordsRegArray){
 		$this->echoFlush("Handling ".sizeof($changedRecordsRegArray)." number of changed records...<br>");
 		
@@ -197,6 +189,7 @@ class ControllerCatalogRefresh extends Controller {
 			$newProductId = $this->insertNewProduct($changedRecordReg, $allCategoryIds, $allProductAttributes, $allProductImages);
 			$this->echoFlush("New Product saved, web_tag_number: ".$changedRecordReg->get('web_tag_number')." as ProductId: ".$newProductId);
 			if ($this->isTestingMode){
+				//In test mode we only load 100 items.
 				$count++;
 				if ($count > 100)
 					break;

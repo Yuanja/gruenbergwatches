@@ -71,39 +71,40 @@
 
 </head>
 <body>
-<div class="mdl-layout mdl-js-layout mdl-layout--no-desktop-drawer-button">
-  <div class="mdl-layout__header-row">
-    <div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button"><i class="material-icons"></i></div>
-    <form action="#">
-        <div class="mdl-textfield mdl-js-textfield">
-            <input class="mdl-textfield__input" type="text" id="username"/>
-            <label class="mdl-textfield__label" for="username"><img src="catalog/view/theme/gruenbergwatches/images/search.png"></label>
+<div class="mdl-layout mdl-js-layout mdl-layout--no-desktop-drawer-button mdl-layout--fixed-header">
+	<div class="mdl-layout--fixed-header">
+		<div class="mdl-layout__header-row mdl-header">
+			<div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button"><i class="material-icons"></i></div>
+		    <form action="#">
+		        <div class="mdl-textfield mdl-js-textfield">
+		            <input class="mdl-textfield__input" type="text" id="username"/>
+		            <label class="mdl-textfield__label" for="username"><img src="catalog/view/theme/gruenbergwatches/images/search.png"></label>
+		        </div>
+		    </form>
+		    <nav>
+		    	<span class="title mdl-layout-title">
+		    		Donald E. Gruenberg
+    			</span>
+	    		<ul>
+	              <li><a class="mdl-navigation__link" href="">Our Story</a></li>
+	              <li><a class="mdl-navigation__link" href="<?php echo $newarrivals; ?>">New Arrivals</a></li>
+	              <li><a class="mdl-navigation__link" href="watches.html">Watches</a></li>
+	              <li><a class="mdl-navigation__link" href="">Jewelry</a></li>
+	              <li><a class="mdl-navigation__link" href="">Contact</a></li>
+	            </ul>
+		    </nav>
+		    <button class="mdl-button mdl-button--colored mdl-js-button sell">Sell Your Watch or Jewelry</button>
         </div>
-    </form>
-    <span class="title mdl-layout-title">
-      Donald E. Gruenberg
-    </span>
-    <!-- Add spacer, to align navigation to the right in desktop -->
-    <div class="header-spacer mdl-layout-spacer"></div>
-    <!-- Navigation -->
-  </div>
-  <div class="navigation-container mdl-layout__header-row">
-    <nav>
-      <ul>
-        <li><a class="mdl-navigation__link" href="">Our Story</a></li>
-        <li><a class="mdl-navigation__link" href="">New Arrivals</a></li>
-        <li><a class="mdl-navigation__link" href="">Watches</a></li>
-        <li><a class="mdl-navigation__link" href="">Jewelry</a></li>
-        <li><a class="mdl-navigation__link" href="">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-  <div class="mdl-layout__drawer">
-    <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="">Our Story</a>
-      <a class="mdl-navigation__link" href="">New Arrivals</a>
-      <a class="mdl-navigation__link" href="">Watches</a>
-      <a class="mdl-navigation__link" href="">Jewelry</a>
-      <a class="mdl-navigation__link" href="">Contact</a>
-    </nav>
-  </div>
+        	<!-- Add spacer, to align navigation to the right in desktop -->
+        <div class="header-spacer mdl-layout-spacer"></div>
+        	<!-- Navigation -->
+		<div class="mdl-layout__drawer">
+			<nav class="mdl-navigation">
+		      <a class="mdl-navigation__link" href="">Our Story</a>
+		      <a class="mdl-navigation__link" href="<?php echo $newarrivals; ?>">New Arrivals</a>
+		      <a class="mdl-navigation__link" href="">Watches</a>
+		      <a class="mdl-navigation__link" href="">Jewelry</a>
+		      <a class="mdl-navigation__link" href="">Contact</a>
+		    </nav>
+		</div>
+	</div>
