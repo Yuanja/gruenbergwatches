@@ -31,7 +31,7 @@ class ControllerProductNewarrivals extends Controller {
 			$limit = (int)$this->request->get['limit'];
 		} else {
 			//Hard coded to 10
-			$limit = 10;
+			$limit = 99;
 		}
 
 		$this->document->setTitle($this->language->get('heading_title'));
