@@ -26,11 +26,11 @@ a {
     right:0;
     left:0;
 }
-form {
+.search {
   z-index: 12;
   margin:-60px 0 0;
 }
-form img {
+.search img {
       width: 20px;
 }
 .title {
