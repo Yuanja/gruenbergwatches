@@ -85,6 +85,7 @@ class ControllerCommonHeader extends Controller {
 		$data['contact'] = $this->url->link('information/contact');
 		$data['telephone'] = $this->config->get('config_telephone');
 		$data['newarrivals'] = $this->url->link('product/newarrivals', '', true);
+		$data['watches'] = $this->url->link('product/search', '', true);
 
 		// Menu
 		$this->load->model('catalog/category');

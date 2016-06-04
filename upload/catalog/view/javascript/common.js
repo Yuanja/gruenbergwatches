@@ -51,6 +51,19 @@ $(document).ready(function() {
 	})
 
 	/* Search */
+	$('#header-search').on('keydown', function(e) {
+		if (e.keyCode == 13) {
+			var url = $('base').attr('href') + 'index.php?route=product/search';
+
+			var value = $('#header-search').val();
+
+			if (value) {
+				url += '&search=' + encodeURIComponent(value);
+			}
+			location = url;
+		}
+	});
+	
 	$('#search input[name=\'search\']').parent().find('button').on('click', function() {
 		var url = $('base').attr('href') + 'index.php?route=product/search';
 

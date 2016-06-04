@@ -74,13 +74,11 @@
 <div class="mdl-layout mdl-js-layout mdl-layout--no-desktop-drawer-button mdl-layout--fixed-header">
 	<div class="mdl-layout--fixed-header">
 		<div class="mdl-layout__header-row mdl-header">
-			<div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button"><i class="material-icons"></i></div>
-		    <form action="#">
+			<div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button"><i class="material-icons"></i></div>
 		        <div class="mdl-textfield mdl-js-textfield">
-		            <input class="mdl-textfield__input" type="text" id="username"/>
-		            <label class="mdl-textfield__label" for="username"><img src="catalog/view/theme/gruenbergwatches/images/search.png"></label>
+		            <input type="text" name="search" id="header-search" class="mdl-textfield__input" />
+		            <label class="mdl-textfield__label" for="search"><img src="catalog/view/theme/gruenbergwatches/images/search.png"></label>
 		        </div>
-		    </form>
 		    <nav>
 		    	<span class="title mdl-layout-title">
 		    		Donald E. Gruenberg
@@ -88,7 +86,7 @@
 	    		<ul>
 	              <li><a class="mdl-navigation__link" href="">Our Story</a></li>
 	              <li><a class="mdl-navigation__link" href="<?php echo $newarrivals; ?>">New Arrivals</a></li>
-	              <li><a class="mdl-navigation__link" href="watches.html">Watches</a></li>
+	              <li><a class="mdl-navigation__link" href="<?php echo $watches; ?>">Watches</a></li>
 	              <li><a class="mdl-navigation__link" href="">Jewelry</a></li>
 	              <li><a class="mdl-navigation__link" href="">Contact</a></li>
 	            </ul>
@@ -102,7 +100,7 @@
 			<nav class="mdl-navigation">
 		      <a class="mdl-navigation__link" href="">Our Story</a>
 		      <a class="mdl-navigation__link" href="<?php echo $newarrivals; ?>">New Arrivals</a>
-		      <a class="mdl-navigation__link" href="">Watches</a>
+		      <a class="mdl-navigation__link" href="<?php echo $watches; ?>">Watches</a>
 		      <a class="mdl-navigation__link" href="">Jewelry</a>
 		      <a class="mdl-navigation__link" href="">Contact</a>
 		    </nav>
