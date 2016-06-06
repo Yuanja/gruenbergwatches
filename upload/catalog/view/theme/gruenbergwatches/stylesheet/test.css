@@ -11,7 +11,7 @@ a {
   position:relative;
 }
 .mdl-layout__header-row {
-    height: 120px;
+    height: 100px;
 }
 .mdl-grid {
   padding:0;
@@ -28,7 +28,7 @@ a {
 }
 .search {
   z-index: 12;
-  margin:-60px 0 0;
+  margin:-40px 0 0;
 }
 .search img {
       width: 20px;
@@ -65,6 +65,13 @@ nav ul li:hover ul.fallback {display:block;}
 .mdl-card {
   width:100%;
   min-height:50px;
+}
+.banner {
+  margin:0;
+}
+.banner img{
+  width: 100%;
+  position: fixed;
 }
 
 .sell {
@@ -172,23 +179,32 @@ nav ul li:hover ul.fallback {display:block;}
   border: 1px solid;
   border-radius: 4px;
   width: 220px;
-  margin: -60px 0 0 80px;
+  margin: -40px 0 0 80px;
   font-size: 12px;
   }
   .mdl-button:hover {
       background-color: transparent;
   }
-  
   .products {
     margin:110px 0 0;
   }
 .watches {
   max-width:628px;
   margin:0 auto;
-  text-align: center;
+  text-align: center; 
 }
 
 .watches img {
+  max-width:140px;
+}
+
+.watchesSrch {
+  max-width:628px;
+  margin:245px auto 0;
+  text-align: center;
+}
+
+.watchesSrch img {
   max-width:140px;
 }
   .mdl-mega-footer {
@@ -198,20 +214,24 @@ nav ul li:hover ul.fallback {display:block;}
     width: 100%;
     position: fixed;
     background: transparent;
-    bottom:30px;
+
   }
 .mdl-mega-footer .footer {
   text-align: center;
-      width: 100%;
-      background: transparent;
-      font-size: .7rem;
-      color: rgb(255, 255, 255);
-      text-shadow: 1px 1px 2px rgb(0, 0, 0);
-      margin: 0 auto;
+  width: 100%;
+  background: transparent;
+  font-size: .7rem;
+  color: #000;
+  margin: 0 auto;
+  padding:20px;
+  background:#fff;
+  opacity:0.97;
 }
 
 @media screen and (min-width: 1025px) {
   .mdl-layout--no-desktop-drawer-button .mdl-layout__header-row {
+    background:#fff;
+    opacity:0.97;
     padding: 20px;
     width: 100%;
     margin:auto;
@@ -219,6 +239,7 @@ nav ul li:hover ul.fallback {display:block;}
   }
   nav {
     margin:0 auto;
+    padding:20px 0 0;
     background:transparent;
   }
 }
