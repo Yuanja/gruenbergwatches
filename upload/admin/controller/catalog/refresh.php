@@ -1,6 +1,9 @@
 <?php
 //URL parameters options: testing=1 sets the test mode which loads full feed but only gets 100 watches.
 //reloadLastFeed=1 skips the feed xml download and reuse the last one.
+//clear=1 cleans up the catalog
+//Sample http://localhost/gruenbergwatches/admin/index.php?route=catalog/refresh&reloadLastFeed=1&clear=1&testing=1
+
 define("CATEGORY_DELIMETER", "&nbsp;&nbsp;&gt;&nbsp;&nbsp;");
 define("WATCH_ATTRIBUTE_GROUP", "Watch attributes");
 define("SOURCE_IP", "107.197.220.126");
@@ -251,8 +254,8 @@ class ControllerCatalogRefresh extends Controller {
 		array_push($productAttributes, $this->getAttributeArrayElement("web_watch_box_papers", "Box and Papers", 110, $changedRecordReg, "None"));
 		array_push($productAttributes, $this->getAttributeArrayElement("web_watch_condition", "Condition", 120, $changedRecordReg));
 		array_push($productAttributes, $this->getAttributeArrayElement("web_tag_number", "Sku", 125, $changedRecordReg));
-//		array_push($productAttributes, $this->getAttributeArrayElement("web_price_retail", "Retail Price", 130, $changedRecordReg));
-//		array_push($productAttributes, $this->getAttributeArrayElement("web_price_sale", "Sale Price", 140, $changedRecordReg));
+		array_push($productAttributes, $this->getAttributeArrayElement("web_price_retail", "Retail Price", 130, $changedRecordReg));
+		array_push($productAttributes, $this->getAttributeArrayElement("web_price_sale", "Sale Price", 140, $changedRecordReg));
 		
 		
 		return array_filter($productAttributes);

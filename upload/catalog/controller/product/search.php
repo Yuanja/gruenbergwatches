@@ -196,7 +196,8 @@ class ControllerProductSearch extends Controller {
 
 		$data['products'] = array();
 
-		if (isset($this->request->get['search']) || isset($this->request->get['tag'])) {
+		if (isset($this->request->get['search']) || isset($this->request->get['tag']) 
+				|| isset($this->request->get['sort'])) {
 			$filter_data = array(
 				'filter_name'         => $search,
 				'filter_tag'          => $tag,
@@ -443,12 +444,12 @@ class ControllerProductSearch extends Controller {
 			    $this->document->addLink($this->url->link('product/search', $url . '&page='. ($page + 1), true), 'next');
 			}
 		} else {
-			//Show some new watches as default
+			//Show some new arrivals as default
 			$filter_data = array(
 					'sort'  => 'p.sku',
 					'order' => 'ASC',
 					'start' => ($page - 1) * $limit,
-					'limit' => 3
+					'limit' => 40
 			);
 			
 			$results = $this->model_catalog_product->getProducts($filter_data);
@@ -503,6 +504,12 @@ class ControllerProductSearch extends Controller {
 		$data['category_id'] = $category_id;
 		$data['sub_category'] = $sub_category;
 
+		//Additional links
+		$data['brandasc_link'] = $this->url->link('product/search', 'sort=m.name&order=ASC');
+		$data['newest_link'] = $this->url->link('product/search');
+		$data['price_asc_link'] = $this->url->link('product/search', 'sort=p.price&order=ASC');
+		$data['price_desc_link'] = $this->url->link('product/search', 'sort=p.price&order=DESC');
+		
 		$data['sort'] = $sort;
 		$data['order'] = $order;
 		$data['limit'] = $limit;

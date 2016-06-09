@@ -3,10 +3,10 @@
   <div class="banner">
     <img src="catalog/view/theme/gruenbergwatches/images/watches-page-banner.png">
     <div class="mdl-grid searchNav">
-      <div class="mdl-cell mdl-cell--3-col">brands a-z</div>
-      <div class="mdl-cell mdl-cell--3-col">newest</div>
-      <div class="mdl-cell mdl-cell--3-col">$-$$$</div>
-      <div class="mdl-cell mdl-cell--3-col">$$$-$</div>
+      <div class="mdl-cell mdl-cell--3-col"><a href="<?php echo $brandasc_link ?>">brands a-z</div>
+      <div class="mdl-cell mdl-cell--3-col"><a href="<?php echo $newest_link ?>">newest</a></div>
+      <div class="mdl-cell mdl-cell--3-col"><a href="<?php echo $price_asc_link ?>">$-$$$</a></div>
+      <div class="mdl-cell mdl-cell--3-col"><a href="<?php echo $price_desc_link ?>">$$$-$</a></div>
     </div>
   </div>
 <?php if ($products) { ?>
