@@ -1,14 +1,18 @@
 <?php echo $header; ?>
-<div class="mdl-layout__content products">
+<div class="mdl-layout__content bannerWrap">
   <div class="banner">
-    <img src="catalog/view/theme/gruenbergwatches/images/watches-page-banner.png">
-    <div class="mdl-grid searchNav">
-      <div class="mdl-cell mdl-cell--3-col">brands a-z</div>
-      <div class="mdl-cell mdl-cell--3-col">newest</div>
-      <div class="mdl-cell mdl-cell--3-col">$-$$$</div>
-      <div class="mdl-cell mdl-cell--3-col">$$$-$</div>
+    <div class="searchNav">
+      <div class="mdl-grid wrapper">
+        <div class="mdl-cell mdl-cell--1-col subHeader">sort by</div>
+        <div class="mdl-cell mdl-cell--1-col"><a href="#">brands a-z</a></div>
+        <div class="mdl-cell mdl-cell--1-col"><a href="#">newest</a></div>
+        <div class="mdl-cell mdl-cell--1-col"><a href="#">$-$$$</a></div>
+        <div class="mdl-cell mdl-cell--1-col"><a href="#">$$$-$</a></div>
+      </div>
     </div>
   </div>
+</div>
+<div class="mdl-layout-spacer product"></div>
 <?php if ($products) { ?>
 <?php 
 	$chunkBy3Products = array_chunk($products, 4);
