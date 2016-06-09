@@ -1,14 +1,18 @@
 <?php echo $header; ?>
-<div class="mdl-layout__content products">
+<div class="mdl-layout__content bannerWrap">
   <div class="banner">
-    <img src="catalog/view/theme/gruenbergwatches/images/watches-page-banner.png">
-    <div class="mdl-grid searchNav">
-      <div class="mdl-cell mdl-cell--3-col"><a href="<?php echo $brandasc_link ?>">brands a-z</div>
-      <div class="mdl-cell mdl-cell--3-col"><a href="<?php echo $newest_link ?>">newest</a></div>
-      <div class="mdl-cell mdl-cell--3-col"><a href="<?php echo $price_asc_link ?>">$-$$$</a></div>
-      <div class="mdl-cell mdl-cell--3-col"><a href="<?php echo $price_desc_link ?>">$$$-$</a></div>
+    <div class="searchNav">
+      <div class="mdl-grid wrapper">
+        <div class="mdl-cell mdl-cell--1-col subHeader">sort by</div>
+        <div class="mdl-cell mdl-cell--1-col"><a href="<?php echo $brandasc_link ?>">brands a-z</a></div>
+        <div class="mdl-cell mdl-cell--1-col"><a href="<?php echo $newest_link ?>">newest</a></div>
+        <div class="mdl-cell mdl-cell--1-col"><a href="<?php echo $price_asc_link ?>">$-$$$</a></div>
+        <div class="mdl-cell mdl-cell--1-col"><a href="<?php echo $price_desc_link ?>">$$$-$</a></div>
+      </div>
     </div>
   </div>
+</div>
+<div class="mdl-layout-spacer product"></div>
 <?php if ($products) { ?>
 <?php 
 	$chunkBy3Products = array_chunk($products, 4);

@@ -1,5 +1,9 @@
+body {
+  font-family:Helvetica Neue;
+}
+
 a {
-  color:#2196f3;
+  color:#000;
   text-decoration:none;
 }
 .mdl-header {
@@ -11,7 +15,7 @@ a {
   position:relative;
 }
 .mdl-layout__header-row {
-    height: 100px;
+    height: 137px;
 }
 .mdl-grid {
   padding:0;
@@ -31,10 +35,11 @@ a {
   margin:-40px 0 0;
 }
 .search img {
-      width: 20px;
+  width: 20px;
 }
 .title {
   text-transform:uppercase;
+  font-size:27px;
   font-weight:300;
   font-family: Helvetica Neue;
   width: auto;
@@ -44,7 +49,14 @@ nav {background:#FFF;float:left;}
 nav ul {text-align:center;margin:0;padding:0;}
 nav ul li {float:left;display:inline;}
 nav ul li:hover {}
-nav ul li a {display:block;padding:15px 25px;color:#444;text-decoration:none;text-transform:uppercase;}
+.mdl-layout__header-row .mdl-navigation__link {
+  display:block;
+  font-size:16px;
+  font-weight:200;
+  padding:0 25px;
+  color:#444;
+  text-decoration:none;
+  text-transform:uppercase;}
 nav ul li a.dd {
   background-image: url('images/ic_arrow_drop_down_black_24px.svg');
   background-repeat: no-repeat;
@@ -66,15 +78,39 @@ nav ul li:hover ul.fallback {display:block;}
   width:100%;
   min-height:50px;
 }
-.banner {
-  margin:0;
-  position:fixed;
-}
-.banner img{
+.bannerWrap {
   width: 100%;
+  height: 100%;
   position: fixed;
+  z-index: 9;
 }
-
+.banner {
+  margin: 137px 0 0;
+  position: fixed;
+  background: #fff url('../images/watches-page-banner.png') no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 291px;
+}
+.searchNav {
+  width: 100%;
+  background:#fff;
+  text-align: center;
+  position: absolute;
+  bottom: -137px;
+  padding: 50px 0;
+}
+.searchNav .wrapper {width:1210px;  justify-content: center;margin:0 auto;}
+.searchNav a, .subHeader {
+  font-size:18px;
+  font-weight:200;
+}
+.subHeader {
+  font-weight:600;
+}
+.mdl-layout-spacer.product {
+  height:5  40px;
+}
 .sell {
   background: transparent;
 }
@@ -176,12 +212,12 @@ nav ul li:hover ul.fallback {display:block;}
 }
 .mdl-button.mdl-button--colored {
   color: #000;
-  font-weight: 400;
+  font-weight: 600;
   border: 1px solid;
   border-radius: 4px;
-  width: 220px;
+  width: 230px;
   margin: -40px 0 0 80px;
-  font-size: 12px;
+  font-size: .9rem;
   }
   .mdl-button:hover {
       background-color: transparent;
@@ -193,12 +229,7 @@ nav ul li:hover ul.fallback {display:block;}
 .watches {
   max-width:628px;
   margin:0 auto;
-  text-align: center; 
-}
-.searchNav {
-  width: 628px;
-  margin:300px auto 0;
-  text-align:center;
+  text-align: center;
 }
 
 .watches img {
@@ -206,7 +237,7 @@ nav ul li:hover ul.fallback {display:block;}
 }
 
 .watchesSrch {
-  margin:50px auto 0;
+  margin: 10px auto 70px;
   text-align: center;
 }
 
@@ -238,7 +269,7 @@ nav ul li:hover ul.fallback {display:block;}
   .mdl-layout--no-desktop-drawer-button .mdl-layout__header-row {
     background:#fff;
     opacity:0.97;
-    padding: 20px;
+    padding: 0 20px 20px;
     width: 100%;
     margin:auto;
     z-index:10;

@@ -84,7 +84,7 @@
 		    		Donald E. Gruenberg
     			</span>
 	    		<ul>
-	              <li><a class="mdl-navigation__link" href="">Our Story</a></li>
+	              <li><a class="mdl-navigation__link" href="<?php echo $story; ?>">Our Story</a></li>
 	              <li><a class="mdl-navigation__link" href="<?php echo $newarrivals; ?>">New Arrivals</a></li>
 	              <li><a class="mdl-navigation__link" href="<?php echo $watches; ?>">Watches</a></li>
 	              <li><a class="mdl-navigation__link" href="">Jewelry</a></li>
@@ -98,7 +98,7 @@
         	<!-- Navigation -->
 		<div class="mdl-layout__drawer">
 			<nav class="mdl-navigation">
-		      <a class="mdl-navigation__link" href="">Our Story</a>
+		      <a class="mdl-navigation__link" href="<?php echo $story; ?>">Our Story</a>
 		      <a class="mdl-navigation__link" href="<?php echo $newarrivals; ?>">New Arrivals</a>
 		      <a class="mdl-navigation__link" href="<?php echo $watches; ?>">Watches</a>
 		      <a class="mdl-navigation__link" href="">Jewelry</a>
