@@ -99,6 +99,10 @@
   <div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button"><i class="material-icons"></i></div>
 	<div class="mdl-layout__drawer">
 		<nav class="mdl-navigation">
+      <div class="mdl-textfield mdl-js-textfield search">
+          <input type="text" name="search" id="header-search" class="mdl-textfield__input" />
+          <label class="mdl-textfield__label" for="search"><img src="catalog/view/theme/gruenbergwatches/images/search.png"></label>
+      </div>
 	      <a class="mdl-navigation__link" href="<?php echo $story; ?>">Our Story</a>
 	      <a class="mdl-navigation__link" href="<?php echo $newarrivals; ?>">New Arrivals</a>
 	      <a class="mdl-navigation__link" href="<?php echo $watches; ?>">Watches</a>

@@ -311,6 +311,9 @@ nav ul li:hover ul.fallback {display:block;}
   .mdl-layout__header-row {
       padding: 0 16px 0 60px;
   }
+  nav, .mdl-layout__header-row > .search, .sell, .bannerWrap {
+    display:none;
+  }
   .title {
       text-transform: uppercase;
       font-weight: 300;
