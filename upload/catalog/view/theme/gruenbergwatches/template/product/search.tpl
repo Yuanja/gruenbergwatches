@@ -12,7 +12,7 @@
     </div>
   </div>
 </div>
-<div class="mdl-layout-spacer product"></div>
+<div class="mdl-layout-spacer product searchSpcr"></div>
 <?php if ($products) { ?>
 <?php 
 	$chunkBy3Products = array_chunk($products, 4);

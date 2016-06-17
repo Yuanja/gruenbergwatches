@@ -97,13 +97,16 @@ nav ul li:hover ul.fallback {display:block;}
   background:#fff;
   text-align: center;
   position: absolute;
-  bottom: -137px;
-  padding: 50px 0;
+  bottom: -97px;
+  padding: 30px 0;
 }
 .searchNav .wrapper {width:1210px;  justify-content: center;margin:0 auto;}
 .searchNav a, .subHeader {
   font-size:18px;
   font-weight:200;
+}
+.searchSpcr {
+  margin:510px 0 0;
 }
 .subHeader {
   font-weight:600;
@@ -223,7 +226,7 @@ nav ul li:hover ul.fallback {display:block;}
       background-color: transparent;
   }
   .products {
-    margin:100px 0 0;
+    margin:150px 0 0;
   }
   
 .watches {
@@ -242,7 +245,7 @@ nav ul li:hover ul.fallback {display:block;}
 }
 
 .watchesSrch img {
-
+  height:180px;
 }
   .mdl-mega-footer {
     padding: 0;
