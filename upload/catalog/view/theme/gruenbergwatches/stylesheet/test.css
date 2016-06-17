@@ -322,8 +322,11 @@ nav ul li:hover ul.fallback {display:block;}
       font-size: 18px;
       text-align: center;
   }
+  .slick-slider {
+      margin: 45px 0;
+  }
   .slick-slide img {
-    width:500px;
+    width: 360px;
   }
   .sell {
     position:relative;

@@ -74,7 +74,6 @@
 <div class="mdl-layout mdl-js-layout mdl-layout--no-desktop-drawer-button mdl-layout--fixed-header">
 	<div class="mdl-layout--fixed-header">
 		<div class="mdl-layout__header-row mdl-header">
-			<div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button"><i class="material-icons"></i></div>
         <div class="mdl-textfield mdl-js-textfield search">
             <input type="text" name="search" id="header-search" class="mdl-textfield__input" />
             <label class="mdl-textfield__label" for="search"><img src="catalog/view/theme/gruenbergwatches/images/search.png"></label>
@@ -96,13 +95,14 @@
         	<!-- Add spacer, to align navigation to the right in desktop -->
         <div class="header-spacer mdl-layout-spacer"></div>
         	<!-- Navigation -->
-		<div class="mdl-layout__drawer">
-			<nav class="mdl-navigation">
-		      <a class="mdl-navigation__link" href="<?php echo $story; ?>">Our Story</a>
-		      <a class="mdl-navigation__link" href="<?php echo $newarrivals; ?>">New Arrivals</a>
-		      <a class="mdl-navigation__link" href="<?php echo $watches; ?>">Watches</a>
-		      <a class="mdl-navigation__link" href="">Jewelry</a>
-		      <a class="mdl-navigation__link" href="">Contact</a>
-		    </nav>
-		</div>
+	</div>
+  <div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button"><i class="material-icons"></i></div>
+	<div class="mdl-layout__drawer">
+		<nav class="mdl-navigation">
+	      <a class="mdl-navigation__link" href="<?php echo $story; ?>">Our Story</a>
+	      <a class="mdl-navigation__link" href="<?php echo $newarrivals; ?>">New Arrivals</a>
+	      <a class="mdl-navigation__link" href="<?php echo $watches; ?>">Watches</a>
+	      <a class="mdl-navigation__link" href="">Jewelry</a>
+	      <a class="mdl-navigation__link" href="">Contact</a>
+	    </nav>
 	</div>
