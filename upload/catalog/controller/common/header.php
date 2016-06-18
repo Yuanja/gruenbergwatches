@@ -82,11 +82,16 @@ class ControllerCommonHeader extends Controller {
 		$data['logout'] = $this->url->link('account/logout', '', true);
 		$data['shopping_cart'] = $this->url->link('checkout/cart');
 		$data['checkout'] = $this->url->link('checkout/checkout', '', true);
-		$data['contact'] = $this->url->link('information/contact');
+		
 		$data['telephone'] = $this->config->get('config_telephone');
+		
+		//Gruenberg links
+		$data['story'] = $this->url->link('information/story', '', true);
+		$data['contact'] = $this->url->link('information/contact');
 		$data['newarrivals'] = $this->url->link('product/newarrivals', '', true);
 		$data['watches'] = $this->url->link('product/search', '', true);
-
+		$data['sell'] = $this->url->link('information/sell', '', true);
+		
 		// Menu
 		$this->load->model('catalog/category');
 
