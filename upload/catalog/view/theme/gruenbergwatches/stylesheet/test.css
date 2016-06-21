@@ -1,10 +1,14 @@
 body {
   font-family:Helvetica Neue;
 }
-
 a {
   color:#000;
   text-decoration:none;
+}
+h5 {
+  font-weight:300;
+  margin: 150px 0 0;
+  text-align:center;
 }
 .mdl-header {
   display: flex;
@@ -25,10 +29,10 @@ a {
   width:114px;
 }
 .mdl-layout__drawer-button {
-    margin: 4px;
-    color: #000;
-    right:0;
-    left:0;
+  margin: 4px;
+  color: #000;
+  right:0;
+  left:0;
 }
 .search {
   z-index: 12;
@@ -120,11 +124,9 @@ nav ul li:hover ul.fallback {display:block;}
 .hero-container {
   position:relative;
 }
-
 .slick-slide img {
   width:100%;
 }
-
 .slick-dots {
     bottom: -5px;
 }
@@ -180,7 +182,6 @@ nav ul li:hover ul.fallback {display:block;}
       background: #fff;
       border:1px solid #9cc098;
 }
-
 .hero-content {
   padding:0 0 40px;
   position:absolute;
@@ -218,7 +219,7 @@ nav ul li:hover ul.fallback {display:block;}
   font-weight: 600;
   border: 1px solid;
   border-radius: 4px;
-  width: 230px;
+  width: 250px;
   margin: -40px 0 0 80px;
   font-size: .9rem;
   }
@@ -226,36 +227,63 @@ nav ul li:hover ul.fallback {display:block;}
       background-color: transparent;
   }
   .products {
-    margin:150px 0 0;
+    margin:150px 0 80px;
   }
-  
+  .mdl-layout__content>.mdl-grid {
+    margin: 80px auto 40px;
+    justify-content:center;
+    max-width:2184px;
+  }
+  .section__block {
+    width: 400px;
+    padding: 0px 45px;
+  }
+  .section__block p {
+    font-size: 16px;
+    font-weight: 200;
+    line-height:18px;
+    padding: 0 36px 10px 5px;
+  }
+  .storyHdr {
+    text-transform:uppercase;
+    border-bottom:1px solid #000;
+    margin: 0 0 30px;
+}
 .watches {
   max-width:628px;
   margin:0 auto;
   text-align: center;
 }
-
 .watches img {
   max-width:140px;
 }
-
 .watchesSrch {
   margin: 10px auto 70px;
   text-align: center;
 }
-
 .watchesSrch img {
   height:180px;
 }
-  .mdl-mega-footer {
-    padding: 0;
-    z-index: 60;
-    bottom: 0;
-    width: 100%;
-    position: fixed;
-    background: transparent;
-
-  }
+.story .picOne {
+  background:url('../images/storyPic1.jpg') 0 0;
+  background-size:cover;
+  width:300px;
+  height:400px;
+}
+.story .picTwo {
+  background:url('../images/storyPic2.jpg') 0 0;
+  background-size:cover;
+  width:710px;
+  height:400px;
+}
+.mdl-mega-footer {
+  padding: 0;
+  z-index: 60;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  background: transparent;
+}
 .mdl-mega-footer .footer {
   text-align: center;
   width: 100%;
@@ -267,7 +295,6 @@ nav ul li:hover ul.fallback {display:block;}
   background:#fff;
   opacity:0.97;
 }
-
 @media screen and (min-width: 1025px) {
   .mdl-layout--no-desktop-drawer-button .mdl-layout__header-row {
     background:#fff;
