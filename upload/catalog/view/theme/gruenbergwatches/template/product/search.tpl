@@ -23,6 +23,8 @@
 <?php 	foreach ($productChunk as $product) { ?>
   <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-tablet">
     <image src="<?php echo $product['thumb']; ?>">
+    <p>1950 Heuer Carerra 'Dato 12' Reference 3147N</p>
+    <p>$12,000</p>
   </div>
 <?php   } ?>
 		</div>
