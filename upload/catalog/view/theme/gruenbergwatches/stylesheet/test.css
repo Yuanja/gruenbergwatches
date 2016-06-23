@@ -7,7 +7,7 @@ a {
 }
 h5 {
   font-weight:300;
-  margin: 150px 0 0;
+  margin: 140px 0 60px;
   text-align:center;
 }
 .mdl-header {
@@ -400,12 +400,9 @@ nav ul li:hover ul.fallback {display:block;}
     .hero-content ul {
         width: 90%;
     }
-    .mdl-layout__drawer-button {
-          display: none;
-    }
     .sell {
       position:relative;
-    }
+    } 
 }
 
 @media only screen 
