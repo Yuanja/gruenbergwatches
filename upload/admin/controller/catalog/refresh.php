@@ -119,6 +119,7 @@ class ControllerCatalogRefresh extends Controller {
 		$recordValueRegArray = $this->getRecordValueRegArray($xml);
 		//The feed can fuck up so add safe guard to not accidently delete or change 
 		if (isset($recordValueRegArray) && sizeof($recordValueRegArray) > 0){
+			$this->echoFlush("Feed contained number of items: " + sizeof($recordValueRegArray));
 			$changedRecordsRegArray = $this->getChangedRecordsArray($recordValueRegArray);
 			$this->saveChangedRecords($changedRecordsRegArray);
 			$this->deleteProductNotInFeed($recordValueRegArray);

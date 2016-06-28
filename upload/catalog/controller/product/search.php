@@ -207,14 +207,14 @@ class ControllerProductSearch extends Controller {
 				'sort'                => $sort,
 				'order'               => $order,
 				'start'               => ($page - 1) * $limit,
-				'limit'               => 20
+				'limit'               => 60
 			);
 		} else {
 			$filter_data = array(
 					'sort'  => 'p.sku',
 					'order' => 'ASC',
 					'start' => ($page - 1) * $limit,
-					'limit' => 20
+					'limit' => 60
 			);
 		}
 
