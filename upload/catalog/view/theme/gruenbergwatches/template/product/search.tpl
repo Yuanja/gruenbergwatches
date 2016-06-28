@@ -1,4 +1,6 @@
+
 <?php echo $header; ?>
+
 <div class="mdl-layout__content bannerWrap">
   <div class="banner">
     <div class="searchNav">
@@ -13,6 +15,7 @@
   </div>
 </div>
 <div class="mdl-layout-spacer product searchSpcr"></div>
+<div id="searchoutput">
 <?php if ($products) { ?>
 <?php 
 	$chunkBy3Products = array_chunk($products, 4);
@@ -20,17 +23,46 @@
 	foreach ($chunkBy3Products as $productChunk) { 
 ?> 
     <div class="mdl-grid watchesSrch">
-<?php 	foreach ($productChunk as $product) { ?>
-  <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-tablet">
-    <image src="<?php echo $product['thumb']; ?>">
-    <p>1950 Heuer Carerra 'Dato 12' Reference 3147N</p>
-    <p>$12,000</p>
-  </div>
+<?php 	
+		foreach ($productChunk as $product) { ?>
+		  <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-tablet">
+		    <image src="<?php echo $product['thumb']; ?>">
+		    <p><?php echo $product['name'] ?></p>
+		    <p><?php if ($product['price'] != "$0.00") echo $product['price'] ?></p>
+		  </div>
 <?php   } ?>
-		</div>
+	</div>
+<?php 
+	} ?>
 <?php
-	} 
 }
 ?>
 </div>
+</div>
 <?php echo $footer; ?>
+<script type="text/javascript">
+var nextpage = <?php echo $page ?>;
+$(document).ready(function() {
+	$(window).scroll(function() {
+	   if($(window).scrollTop() + $(window).height() == $(document).height()) {
+		   //var nextpage = parseInt($(".pagenum:last").val())+1;
+		   $.ajax(
+		      {
+			      url: 'index.php?route=product/search',
+			   	  type: 'get',
+			      data: {minoutput : '1',
+			    	  sort : '<?php echo $sort ?>',
+			    	  order : '<?php echo $order ?>',
+			    	  page : nextpage},
+			      complete: function() {
+			    	nextpage = nextpage + 1;
+			      },
+			      success: function(output) {
+			    	$('#searchoutput').append(output); 
+			      }
+		      }
+	       );
+	   }
+	});
+});
+</script>
