@@ -1,7 +1,7 @@
 <?php echo $header; ?>
 <div class="mdl-layout__content">
   <h5>40+ YEARS EXPERIENCE IN THE WATCH AND JEWELRY MARKET</h5>
-  <div class="mdl-grid  mdl-cell mdl-cell--11-col mdl-cell--12-col-tablet">
+  <div class="mdl-grid">
     <div class="section__block section-block--content-titles mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet">
       <p class="storyHdr">Experience</p>
       <p>Don Gruenberg’s shop has been in Beverly Hills since 1979 and continues to develop long-standing relationships with local and international customers.</p>
