@@ -119,7 +119,7 @@ class ControllerCatalogRefresh extends Controller {
 		$recordValueRegArray = $this->getRecordValueRegArray($xml);
 		//The feed can fuck up so add safe guard to not accidently delete or change 
 		if (isset($recordValueRegArray) && sizeof($recordValueRegArray) > 0){
-			$this->echoFlush("Feed contained number of items: " + sizeof($recordValueRegArray));
+			$this->echoFlush("Feed contained number of items: " . sizeof($recordValueRegArray));
 			$changedRecordsRegArray = $this->getChangedRecordsArray($recordValueRegArray);
 			$this->saveChangedRecords($changedRecordsRegArray);
 			$this->deleteProductNotInFeed($recordValueRegArray);
@@ -584,7 +584,7 @@ class ControllerCatalogRefresh extends Controller {
 					$recordReg->set('current_product', $products[0] );
 					$index += 1;
 				} else {
-					//$this->echoFlush("NO CHANGES DETECTED web_tag_number: ".$web_item_number." : ".$recordReg->get("web_description_short"));
+					$this->echoFlush("NO CHANGES DETECTED web_tag_number: ".$web_item_number." : ".$recordReg->get("web_description_short"));
 				}
 			}
 		}
