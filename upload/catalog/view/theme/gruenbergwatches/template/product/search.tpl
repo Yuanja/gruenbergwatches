@@ -1,4 +1,3 @@
-
 <?php echo $header; ?>
 
 <div class="mdl-layout__content bannerWrap">
@@ -44,8 +43,7 @@
 var nextpage = <?php echo $page ?>;
 $(document).ready(function() {
 	$(window).scroll(function() {
-	   if($(window).scrollTop() + $(window).height() == $(document).height()) {
-		   //var nextpage = parseInt($(".pagenum:last").val())+1;
+	   if(parseFloat($(window).scrollTop()) + parseFloat($(window).height()) == parseFloat($(document).height())) {
 		   $.ajax(
 		      {
 			      url: 'index.php?route=product/search',
