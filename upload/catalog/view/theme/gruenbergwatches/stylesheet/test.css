@@ -1,3 +1,6 @@
+*:focus {
+    outline: none;
+}
 body {
   font-family:Helvetica Neue;
 }
@@ -93,12 +96,12 @@ nav ul li:hover ul.fallback {display:block;}
   z-index: 9;
 }
 .banner {
-  margin: 6.7em 0 0;
+  margin: 9.7em 0 0;
   position: fixed;
   background: #fff url('../images/watches-page-banner.png') no-repeat center center;
   background-size: cover;
   width: 100%;
-  height: 15em;
+  height: 16em;
 }
 .searchNav {
   width: 100%;
@@ -334,8 +337,8 @@ nav ul li:hover ul.fallback {display:block;}
     .sell {
       position:relative;
     } 
-    .mdl-layout--fixed-header
-     {
+    .mdl-layout--fixed-header,
+    .bannerWrap {
       display:none;
     }
     .mdl-layout__drawer-button
@@ -346,6 +349,10 @@ nav ul li:hover ul.fallback {display:block;}
       margin: 0;
       padding: 20px;
       justify-content:left;
+      z-index:40;
+    }
+    .mdl-layout__drawer {
+      z-index:50;
     }
     .material-icons {
       float:left;
@@ -355,6 +362,9 @@ nav ul li:hover ul.fallback {display:block;}
     }
     h5 {
         margin: 50px 0 40px;
+    }
+    .searchSpcr {
+        margin: 133px 0 0;
     }
 }
 
@@ -384,10 +394,10 @@ nav ul li:hover ul.fallback {display:block;}
           margin: -60px 0 0 -120px;
       }
       .banner {
-          margin: 6em 0 0;
+          margin: 7em 0 0;
         }
         .searchSpcr {
-            margin: 400px 0 0;
+            margin: 390px 0 0;
         }
       h5 {
           margin: 90px 0 40px;
@@ -403,13 +413,15 @@ nav ul li:hover ul.fallback {display:block;}
   .navigation-container {
       display: none;
   }
+  .banner {
+    display:none;
+  }
+  .mdl-layout__drawer {
+    z-index:50;
+  }
 }
 
 @media (max-width: 839px) and (min-width: 480px) {
-  .what-we-do .threeup{
-    width:29%;
-    margin:10px 15px;
-  }
 }
 
 @media (max-width: 736px) {
@@ -426,11 +438,23 @@ nav ul li:hover ul.fallback {display:block;}
     .mdl-layout__drawer-button {
       background:#fff;
       width:100%;
+<<<<<<< HEAD
+=======
+      height:45px;
+>>>>>>> workingDrawer
       position:fixed;
       top:0;
       left:0;
       margin: 0 0 0 10px;
       text-align: left;
+      z-index:40;   
+    }
+    .search {
+        z-index: 12;
+        margin: -30px 0 0 10px;
+    }
+    .searchSpcr {
+        margin: 26px 0 0;
     }
 }
 
@@ -479,5 +503,3 @@ nav ul li:hover ul.fallback {display:block;}
     margin: 60px 0 30px;
   }
 }
-
-r

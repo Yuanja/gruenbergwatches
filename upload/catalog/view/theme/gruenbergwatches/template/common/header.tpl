@@ -61,32 +61,43 @@
 
 </head>
 <body>
-<div class="mdl-layout mdl-js-layout mdl-layout--no-desktop-drawer-button mdl-layout--fixed-header">
-    <div class="mdl-layout__header-row mdl-header">
+<div class="mdl-layout mdl-js-layout mdl-layout--no-desktop-drawer-button">
+	<div class="mdl-layout--fixed-header">
+		<div class="mdl-layout__header-row mdl-header">
         <div class="mdl-textfield mdl-js-textfield search">
             <input type="text" name="search" id="header-search" class="mdl-textfield__input" />
             <label class="mdl-textfield__label" for="search"><img src="catalog/view/theme/gruenbergwatches/images/search.png"></label>
         </div>
-        <nav>
-            <span class="title mdl-layout-title">Donald E. Gruenberg</span>
-            <ul>
-                <li><a class="mdl-navigation__link" href="<?php echo $story; ?>">Our Story</a></li>
-                <li><a class="mdl-navigation__link" href="<?php echo $newarrivals; ?>">New Arrivals</a></li>
-                <li><a class="mdl-navigation__link" href="<?php echo $watches; ?>">Watches</a></li>
-                <li><a class="mdl-navigation__link" href="<?php echo $watches; ?>">Jewelry</a></li>
-                <li><a class="mdl-navigation__link" href="<?php echo $contact; ?>">Contact</a></li>
+	    <nav>
+	    	<span class="title mdl-layout-title">
+	    		Donald E. Gruenberg
+			</span>
+    		<ul>
+              <li><a class="mdl-navigation__link" href="<?php echo $story; ?>">Our Story</a></li>
+              <li><a class="mdl-navigation__link" href="<?php echo $newarrivals; ?>">New Arrivals</a></li>
+              <li><a class="mdl-navigation__link" href="<?php echo $watches; ?>">Watches</a></li>
+              <li><a class="mdl-navigation__link" href="<?php echo $watches; ?>">Jewelry</a></li>
+              <li><a class="mdl-navigation__link" href="<?php echo $contact; ?>">Contact</a></li>
             </ul>
-        </nav>
-        <a href="<?php echo $sell; ?>"><button class="mdl-button mdl-button--colored mdl-js-button sell">Sell Your Watch or Jewelry</button></a>
+	    </nav>
+	    <a href="<?php echo $sell; ?>"><button class="mdl-button mdl-button--colored mdl-js-button sell">Sell Your Watch or Jewelry</button></a>
     </div>
+    <!-- Add spacer, to align navigation to the right in desktop -->
+    <div class="header-spacer mdl-layout-spacer"></div>
+    <!-- Navigation -->
 </div>
-<!-- Add spacer, to align navigation to the right in desktop -->
-<div class="header-spacer mdl-layout-spacer"></div>
-<!-- Navigation -->
-<div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button"><i class="material-icons"></i></div>
-
+<div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button">
+    <i class="material-icons"></i>
+  	<span class="title mdl-layout-title">
+  	    Donald E. Gruenberg
+  	</span>
+</div>
 <div class="mdl-layout__drawer">
     <nav class="mdl-navigation">
+        <div class="mdl-textfield mdl-js-textfield search">
+            <input type="text" name="search" id="header-search" class="mdl-textfield__input" />
+            <label class="mdl-textfield__label" for="search"><img src="catalog/view/theme/gruenbergwatches/images/search.png"></label>
+        </div>
         <a class="mdl-navigation__link" href="<?php echo $story; ?>">Our Story</a>
         <a class="mdl-navigation__link" href="<?php echo $newarrivals; ?>">New Arrivals</a>
         <a class="mdl-navigation__link" href="<?php echo $watches; ?>">Watches</a>
