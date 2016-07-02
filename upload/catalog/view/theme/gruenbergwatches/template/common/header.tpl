@@ -71,7 +71,7 @@
 
 </head>
 <body>
-<div class="mdl-layout mdl-js-layout mdl-layout--no-desktop-drawer-button mdl-layout--fixed-header">
+<div class="mdl-layout mdl-js-layout mdl-layout--no-desktop-drawer-button">
 	<div class="mdl-layout--fixed-header">
 		<div class="mdl-layout__header-row mdl-header">
         <div class="mdl-textfield mdl-js-textfield search">
@@ -96,7 +96,12 @@
         <div class="header-spacer mdl-layout-spacer"></div>
         	<!-- Navigation -->
 	</div>
-  <div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button"><i class="material-icons"></i></div>
+  <div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button">
+    <i class="material-icons"></i>
+  	<span class="title mdl-layout-title">
+  		Donald E. Gruenberg
+		</span>
+  </div>
 	<div class="mdl-layout__drawer">
 		<nav class="mdl-navigation">
 			<div class="mdl-textfield mdl-js-textfield search">
