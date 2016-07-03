@@ -9,6 +9,7 @@ a {
   text-decoration:none;
 }
 h5 {
+  font-size:1.2rem;
   font-weight:300;
   margin: 160px 0 40px;
   text-align:center;
@@ -50,7 +51,7 @@ h5 {
 }
 .title {
   text-transform:uppercase;
-  font-size:27px;
+  font-size: 1.6rem;
   font-weight:300;
   font-family: Helvetica Neue;
   width: auto;
@@ -274,7 +275,8 @@ nav ul li:hover ul.fallback {display:block;}
 }
 .watchesSrch p {
   font-family:'Hoefler Text', sans-serif;
-  margin-bottom:5px;
+  width: 11em;
+  margin: 0 auto 5px;
 }
 .story .picOne {
   background:url('../images/storyPic1.jpg') 0 0;
@@ -329,7 +331,8 @@ nav ul li:hover ul.fallback {display:block;}
   and (-webkit-min-device-pixel-ratio: 2) {
     
     .mdl-layout__drawer-button .title {
-        left: calc(50% - 85px);
+      display:inline;
+      font-size: 2.6rem;
     }
     .hero-content ul {
         width: 90%;
@@ -337,12 +340,10 @@ nav ul li:hover ul.fallback {display:block;}
     .sell {
       position:relative;
     } 
-    .mdl-layout--fixed-header,
-    .bannerWrap {
+    .mdl-layout--fixed-header .mdl-header{
       display:none;
     }
-    .mdl-layout__drawer-button
-    { 
+    .mdl-layout__drawer-button{ 
       position: fixed;
       width: 100%;
       background: #fff;
@@ -366,6 +367,16 @@ nav ul li:hover ul.fallback {display:block;}
     .searchSpcr {
         margin: 133px 0 0;
     }
+    .watchesSrch img {
+        height: 36rem;
+    }
+    .watchesSrch p {
+      font-size:2rem;
+      line-height:40px;
+    }
+    .mdl-cell {
+        margin: 38px;
+      }
 }
 
 @media only screen 
@@ -387,7 +398,7 @@ nav ul li:hover ul.fallback {display:block;}
       .mdl-layout__header-row {
           padding: 0 16px 0 20px;
           background:#fff;
-          z-index:3;
+          z-index:300;
           height:128px;
       }
       .mdl-button.mdl-button--colored {
@@ -418,6 +429,14 @@ nav ul li:hover ul.fallback {display:block;}
   }
   .mdl-layout__drawer {
     z-index:50;
+    position:fixed;
+  }
+  .material-icons {
+    display:inline-block;
+    float:left;
+  }
+  .material-icons {
+      margin: 10px 0 0;
   }
 }
 
@@ -438,15 +457,13 @@ nav ul li:hover ul.fallback {display:block;}
     .mdl-layout__drawer-button {
       background:#fff;
       width:100%;
-<<<<<<< HEAD
-=======
-      height:45px;
->>>>>>> workingDrawer
+      height:30px;
       position:fixed;
       top:0;
       left:0;
-      margin: 0 0 0 10px;
-      text-align: left;
+      margin: 0;
+      padding:10px;
+      text-align: center;
       z-index:40;   
     }
     .search {
@@ -454,7 +471,13 @@ nav ul li:hover ul.fallback {display:block;}
         margin: -30px 0 0 10px;
     }
     .searchSpcr {
-        margin: 26px 0 0;
+        margin: 75px 0 0;
+    }
+    h5 {
+      margin: 30px 0 40px;
+    }
+    .products {
+        margin: 50px 0 80px;
     }
 }
 
@@ -469,7 +492,6 @@ nav ul li:hover ul.fallback {display:block;}
       font-size: 18px;
       display: inline;
       top: -5px;
-      left: 20px;
   }
   .slick-slider {
       margin: 45px 0;
@@ -495,6 +517,7 @@ nav ul li:hover ul.fallback {display:block;}
       color: #000;
       text-shadow: none;
       margin: 0 auto;
+      padding: 20px 0;
   }
   form {
       display: none;

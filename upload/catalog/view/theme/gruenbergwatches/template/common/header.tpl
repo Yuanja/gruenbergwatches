@@ -89,7 +89,12 @@
     </nav>
     <a href="<?php echo $sell; ?>"><button class="mdl-button mdl-button--colored mdl-js-button sell">Sell Your Watch or Jewelry</button></a>
   </div>
-  <div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button"><i class="material-icons"></i></div>
+  <div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button">
+    <i class="material-icons"></i>
+  	<span class="title mdl-layout-title">
+  		Donald E. Gruenberg
+  	</span>
+  </div>
 	<div class="mdl-layout__drawer">
 		<nav class="mdl-navigation">
 			<div class="mdl-textfield mdl-js-textfield search">
