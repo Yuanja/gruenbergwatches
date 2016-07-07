@@ -376,7 +376,17 @@ nav ul li:hover ul.fallback {display:block;}
     }
     .mdl-cell {
         margin: 38px;
-      }
+    }
+    .ipadPrtBtn {
+      width:100%:;
+      text-align:center;
+    }
+    .mdl-button.mdl-button--colored {
+      width: 340px;
+      padding: 20px 0 50px;
+      font-size: 1.3rem;
+      margin: 0;
+    }
 }
 
 @media only screen 
@@ -400,6 +410,7 @@ nav ul li:hover ul.fallback {display:block;}
           background:#fff;
           z-index:300;
           height:128px;
+          width:100%;
       }
       .mdl-button.mdl-button--colored {
           margin: -60px 0 0 -120px;
@@ -497,7 +508,7 @@ nav ul li:hover ul.fallback {display:block;}
       margin: 45px 0;
   }
   .slick-slide img {
-    width: 360px;
+    width: 100%;
   }
   .sell {
     position:relative;
@@ -509,6 +520,7 @@ nav ul li:hover ul.fallback {display:block;}
     margin:0 auto;
     top: inherit;
     right: inherit;
+    display:block;
   }
   .mdl-mega-footer .footer {
       text-align: center;
