@@ -9,9 +9,28 @@
       <p>Monday - Friday 10am - 5pm</p>
       <p>Saturday 11am - 6pm</p>
     </div>
-    <div>
+    <div id='map'>
 <!--put code here -->
     </div>
   </div>  
 </div>
 <?php echo $footer; ?>
+<script>
+function initMap() {
+  var myLatLng = {lat: -25.363, lng: 131.044};
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 4,
+    center: myLatLng
+  });
+
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'Hello World!'
+  });
+}
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOdsBVfKQDLtN1chi5mo2clR6SMh5bGgk&callback=initMap">
+</script>

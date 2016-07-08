@@ -19,6 +19,7 @@
 <meta name="keywords" content= "<?php echo $keywords; ?>" />
 <?php } ?>
 
+<link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="catalog/view/theme/gruenbergwatches/stylesheet/material.css">
 <script src="catalog/view/theme/gruenbergwatches/stylesheet/material.js"></script>
   
@@ -28,10 +29,10 @@
 
 <!-- Page styles -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/gruenbergwatches/stylesheet/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/gruenbergwatches/stylesheet/slick/slick-theme.css"/>
 <link rel="stylesheet" href="catalog/view/theme/gruenbergwatches/stylesheet/test.css">
@@ -66,7 +67,6 @@
 <?php foreach ($analytics as $analytic) { ?>
 <?php echo $analytic; ?>
 <?php } ?>
-
 </head>
 <body>
 <div class="mdl-layout mdl-js-layout mdl-layout--no-desktop-drawer-button mdl-layout--fixed-header">

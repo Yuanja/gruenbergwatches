@@ -39,6 +39,8 @@
 </div>
 </div>
 <?php echo $footer; ?>
+</body>
+
 <script type="text/javascript">
 var nextpage = <?php echo $page ?>;
 $(document).ready(function() {
