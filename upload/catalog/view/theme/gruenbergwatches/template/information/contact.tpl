@@ -10,7 +10,8 @@
       <p>Saturday 11am - 6pm</p>
     </div>
     <div id='map'>
-<!--put code here -->
+      <iframe width="600" height="450" frameborder="0" style="border:0"
+src="https://www.google.com/maps/embed/v1/place?q=Gruenberg%20watches&key=AIzaSyAOdsBVfKQDLtN1chi5mo2clR6SMh5bGgk" allowfullscreen></iframe>
     </div>
   </div>  
 </div>
@@ -31,6 +32,4 @@ function initMap() {
   });
 }
 </script>
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOdsBVfKQDLtN1chi5mo2clR6SMh5bGgk&callback=initMap">
-</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOdsBVfKQDLtN1chi5mo2clR6SMh5bGgk&callback=initMap"></script>
