@@ -249,8 +249,9 @@ nav ul li:hover ul.fallback {display:block;}
   .section__block p {
     font-size: 16px;
     font-weight: 200;
-    line-height:18px;
-    padding: 0 36px 10px 5px;
+    line-height: 18px;
+    padding: 0 36px 5px 5px;
+    margin: 0;
   }
   .storyHdr {
     text-transform:uppercase;
