@@ -23,8 +23,9 @@ h5 {
   position: fixed;
 }
 .mdl-layout__container {
-  position:relative;
   margin-bottom: 40px;
+  top:0;
+  z-index:60;
 }
 .mdl-layout__header-row {
     height: 137px;
