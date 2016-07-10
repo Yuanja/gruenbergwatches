@@ -69,7 +69,7 @@
 <?php } ?>
 </head>
 <body>
-<div class="mdl-layout mdl-js-layout mdl-layout--no-desktop-drawer-button mdl-layout--fixed-header">
+<div class="mdl-layout mdl-js-layout mdl-layout--no-desktop-drawer-button">
   <div class="mdl-layout__header-row mdl-header">
     <div class="mdl-textfield mdl-js-textfield search">
       <input type="text" name="search" id="header-search" class="mdl-textfield__input" />
