@@ -319,7 +319,6 @@ nav ul li:hover ul.fallback {display:block;}
 @media screen and (min-width: 1025px) {
   .mdl-layout--no-desktop-drawer-button .mdl-layout__header-row {
     background:#fff;
-    opacity:0.97;
     padding: 0 20px 20px;
     width: 100%;
     margin:auto;
