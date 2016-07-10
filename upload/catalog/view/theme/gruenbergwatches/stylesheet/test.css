@@ -96,9 +96,10 @@ nav ul li:hover ul.fallback {display:block;}
   height: 100%;
   position: fixed;
   z-index: 9;
+  top:0;
 }
 .banner {
-  margin: 8em 0 0;
+  margin: 11.4em 0 0;
   position: fixed;
   background: #fff url('../images/watches-page-banner.png') no-repeat center center;
   background-size: cover;
