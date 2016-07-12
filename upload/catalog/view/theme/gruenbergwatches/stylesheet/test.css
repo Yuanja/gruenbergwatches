@@ -336,6 +336,10 @@ nav ul li:hover ul.fallback {display:block;}
   and (orientation: portrait) 
   and (-webkit-min-device-pixel-ratio: 2) {
     
+    div.mdl-layout.mdl-js-layout.mdl-layout--no-desktop-drawer-button.has-drawer.is-small-screen.is-upgraded {
+      position:fixed;
+    }
+    
     .mdl-layout__drawer-button .title {
       display:inline;
       font-size: 2.6rem;
@@ -502,6 +506,9 @@ nav ul li:hover ul.fallback {display:block;}
 }
 
 @media (max-width: 479px) {
+  div.mdl-layout.mdl-js-layout.mdl-layout--no-desktop-drawer-button.has-drawer.is-small-screen.is-upgraded {
+    position:fixed;
+  }
   .mdl-layout__header-row {
       padding: 0 16px 0 60px;
   }

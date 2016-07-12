@@ -19,8 +19,7 @@
       <p>It is worth the stop in for anyone interested in landmark pieces that define the past decades in jewelry and watch design.</p>
     </div>
     <div class="mdl-grid  mdl-cell mdl-cell--11-col mdl-cell--12-col-tablet story">
-        <div class="mdl-cell mdl-cell--4-col picOne">
-        </div>
+        <div class="mdl-cell mdl-cell--4-col picOne"></div>
         <div class="mdl-cell mdl-cell--6-col mdl-cell--1-offset picTwo">
         </div>
     </div>
