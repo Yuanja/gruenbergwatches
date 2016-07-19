@@ -76,9 +76,9 @@
       <label class="mdl-textfield__label" for="search"><img src="catalog/view/theme/gruenbergwatches/images/search.png"></label>
     </div>
     <nav>
-    	<span class="title mdl-layout-title">
+    	<a class="title mdl-layout-title" href="<?php echo $home; ?>">
     		Donald E. Gruenberg
-    	</span>
+    	</a>
     	<ul>
         <li><a class="mdl-navigation__link" href="<?php echo $story; ?>">Our Story</a></li>
         <li><a class="mdl-navigation__link" href="<?php echo $newarrivals; ?>">New Arrivals</a></li>
