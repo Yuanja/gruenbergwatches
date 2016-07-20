@@ -25,6 +25,8 @@ h5 {
 .mdl-layout__container {
   margin-bottom: 40px;
   top:0;
+  z-index: 30;
+  height:137px;
 }
 .mdl-layout__header-row {
     height: 137px;
@@ -243,10 +245,13 @@ nav ul li:hover ul.fallback {display:block;}
     justify-content:center;
     max-width:2184px;
   }
+  .products>.mdl-grid {
+    max-width:800px;
+  }
   .section__block {
     width: 400px;
     padding: 0px 45px;
-    margin:150px 100px 50px;
+    margin: 70px 7px 50px;
   }
   .section__block p {
     font-size: 16px;
@@ -265,9 +270,9 @@ nav ul li:hover ul.fallback {display:block;}
   margin:0 auto;
   text-align: center;
 }
-/*.watches img {
-  max-width:140px;
-}*/
+.watches img {
+  max-height:300px;
+}
 .watchesSrch {
   margin: 10px auto 30px;
   text-align: center;
@@ -280,6 +285,9 @@ nav ul li:hover ul.fallback {display:block;}
   font-family:'Hoefler Text', sans-serif;
   width: 11em;
   margin: 0 auto 5px;
+}
+.story {
+  justify-content:center;
 }
 .story .picOne {
   background:url('../images/storyPic1.jpg') 0 0;
@@ -298,7 +306,7 @@ nav ul li:hover ul.fallback {display:block;}
   z-index: 60;
   bottom: 0;
   width: 100%;
-  position: fixed;
+  position: relative;
   background: transparent;
 }
 .mdl-mega-footer .footer {
@@ -338,6 +346,10 @@ nav ul li:hover ul.fallback {display:block;}
     
     div.mdl-layout.mdl-js-layout.mdl-layout--no-desktop-drawer-button.has-drawer.is-small-screen.is-upgraded {
       position:fixed;
+    }
+    
+    .storyTop {
+      margin:50px 0 0;
     }
     
     .mdl-layout__drawer-button .title {
@@ -385,7 +397,7 @@ nav ul li:hover ul.fallback {display:block;}
       line-height:40px;
     }
     .mdl-cell {
-        margin: 38px;
+        margin: 20px 38px;
     }
     .ipadPrtBtn {
       width:100%:;
@@ -397,15 +409,31 @@ nav ul li:hover ul.fallback {display:block;}
       font-size: 1.3rem;
       margin: 0;
     }
+    .story {
+      justify-content:center;
+    }
+    .story .picOne {
+        background: url('../images/storyPic1.jpg') 0 0;
+        background-size: cover;
+        width: 200px;
+        height: 260px;
+        margin: 0;
+    }
+    .story .picTwo {
+        background: url('../images/storyPic2.jpg') 0 0;
+        background-size: cover;
+        width: 460px;
+        height: 260px;
+        margin: 0 0 0 30px;
+    }
 }
 
 @media only screen 
-  and (min-device-width: 1024px) 
-  and (max-device-width: 1325px) 
-  and (orientation: landscape) 
-  and (-webkit-min-device-pixel-ratio: 2) {
+  and (min-device-width : 768px) 
+  and (max-device-width : 1024px) 
+  and (orientation: landscape) {
     
-    div.mdl-layout__drawer-button {
+    .mdl-layout__drawer-button {
           display: none;
       }
       .section__block {
@@ -440,6 +468,15 @@ nav ul li:hover ul.fallback {display:block;}
       }
 }
 
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio: 2) { 
+  .mdl-layout__drawer-button {
+        display: none;
+    }
+  }
 
 @media (max-width: 1023px) {
   .navigation-container {

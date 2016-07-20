@@ -1,5 +1,5 @@
 <?php echo $header; ?>
-<div class="mdl-layout__content">
+<div class="mdl-layout__content storyTop">
   <h5>40+ YEARS EXPERIENCE IN THE WATCH AND JEWELRY MARKET</h5>
   <div class="mdl-grid">
     <div class="section__block section-block--content-titles mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet">
