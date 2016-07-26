@@ -7,7 +7,7 @@
 ?>
 		<div class="mdl-grid watches">
 <?php 	foreach ($productChunk as $product) { ?>
-			<div class="mdl-cell mdl-cell--4-col"><image src="<?php echo $product['thumb']; ?>"></div>
+			<div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-phone"><image src="<?php echo $product['thumb']; ?>"></div>
 <?php   } ?>
 		</div>
 <?php
