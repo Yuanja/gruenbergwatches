@@ -91,9 +91,14 @@
   </div>
   <div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button">
     <i class="material-icons"></i>
-  	<span class="title mdl-layout-title">
+  	<!-- <span class="title mdl-layout-title">
+      Donald E. Gruenberg
+    </span> -->
+  </div>
+  <div class="titleContainer">
+  	<a class="title mdl-layout-title" href="<?php echo $home; ?>">
   		Donald E. Gruenberg
-  	</span>
+  	</a>
   </div>
 	<div class="mdl-layout__drawer">
 		<nav class="mdl-navigation">

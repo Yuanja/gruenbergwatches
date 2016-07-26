@@ -58,6 +58,7 @@ h5 {
   font-family: Helvetica Neue;
   width: auto;
   text-align: center;
+  color:#666;
 }
 nav {background:#FFF;float:left;}
 nav ul {text-align:center;margin:0;padding:0;}
@@ -508,6 +509,16 @@ and (-webkit-min-device-pixel-ratio: 2) {
 }
 
 @media (max-width: 839px) and (min-width: 480px) {
+  .titleContainer  {
+    text-align:center;
+  }
+  .title {
+    display:inline-block;
+    text-align: center;
+    position: relative;
+    top: 20px;
+    z-index: 43;
+  }
 }
 
 @media (max-width: 1023px) {
