@@ -1,5 +1,5 @@
 <?php echo $header; ?>
-<div class="mdl-layout__content">
+<div class="mdl-layout__content contact">
   <div class="mdl-grid  mdl-cell mdl-cell--11-col mdl-cell--12-col-tablet">
     <div class="section__block section-block--content-titles mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet">
       <p>344 North Beverly Drive</p>

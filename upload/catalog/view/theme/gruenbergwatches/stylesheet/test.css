@@ -272,7 +272,8 @@ nav ul li:hover ul.fallback {display:block;}
   text-align: center;
 }
 .watches img {
-  max-height:300px;
+  max-width:100%;
+  height:auto;
 }
 .watchesSrch {
   margin: 10px auto 30px;
@@ -332,8 +333,11 @@ nav ul li:hover ul.fallback {display:block;}
   padding: 0 0 10px;
 }
 .sales .section__block {
-    margin: 70px 37px 50px;
+    margin: 100px 37px 50px;
+    width:100%;
+    text-align:center;
 }
+
 @media screen and (min-width: 1025px) {
   .mdl-layout--no-desktop-drawer-button .mdl-layout__header-row {
     background:#fff;
@@ -506,9 +510,6 @@ and (-webkit-min-device-pixel-ratio: 2) {
   .material-icons {
       margin: 10px 0 0;
   }
-}
-
-@media (max-width: 839px) and (min-width: 480px) {
   .titleContainer  {
     text-align:center;
   }
@@ -521,6 +522,10 @@ and (-webkit-min-device-pixel-ratio: 2) {
   }
 }
 
+@media (max-width: 839px) and (min-width: 480px) {
+
+}
+
 @media (max-width: 1023px) {
   .title {
     text-align:center;
@@ -529,10 +534,15 @@ and (-webkit-min-device-pixel-ratio: 2) {
       display:none;
     }
     .hero-content ul {
-        display:none;
+      display:none;
     }
     .section__block {
       padding: 0;
+      margin: 10px 7px 20px;
+    }
+    .contact .section__block {
+      padding: 0;
+      margin: 70px 7px 20px;
     }
     .mdl-layout__drawer-button {
       background:#fff;
@@ -575,7 +585,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
   .title {
       font-size: 18px;
       display: inline;
-      top: -5px;
+      top: 23px;
   }
   .slick-slider {
       margin: 45px 0;
