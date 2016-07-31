@@ -29,11 +29,23 @@ h5 {
   /*height:137px;*/
 }
 .mdl-layout__header-row {
-    height: 137px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding:20px;
+}
+.mdl-textfield .mdl-button {
+    bottom: 10px;
+}
+.mdl-textfield__input {
+    padding: 4px 0 4px 30px;
 }
 .mdl-grid {
   padding:0;
   margin:40px auto 0;
+}
+.mdl-textfield {
+  padding:5px 0;
+  width: 250px;
 }
 .logo-image {
   width:114px;
@@ -232,7 +244,7 @@ nav ul li:hover ul.fallback {display:block;}
   border: 1px solid;
   border-radius: 4px;
   width: 250px;
-  margin: -40px 0 0 80px;
+  margin: -10px 0 0;
   font-size: .9rem;
   }
   .mdl-button:hover {
@@ -341,14 +353,14 @@ nav ul li:hover ul.fallback {display:block;}
 @media screen and (min-width: 1025px) {
   .mdl-layout--no-desktop-drawer-button .mdl-layout__header-row {
     background:#fff;
-    padding: 0 20px 20px;
     width: 100%;
     margin:auto;
     z-index:10;
+    padding:20px;
   }
   nav {
     margin:0 auto;
-    padding:20px 0 0;
+    padding:0;
     background:transparent;
   }
 }

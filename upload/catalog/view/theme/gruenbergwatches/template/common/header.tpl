@@ -71,14 +71,24 @@
 <body>
 <div class="mdl-layout mdl-js-layout mdl-layout--no-desktop-drawer-button">
   <div class="mdl-layout__header-row mdl-header">
-    <div class="mdl-textfield mdl-js-textfield search">
+    <!-- <div class="mdl-textfield mdl-js-textfield search">
       <input type="text" name="search" id="header-search" class="mdl-textfield__input" />
       <label class="mdl-textfield__label" for="search"><img src="catalog/view/theme/gruenbergwatches/images/search.png"></label>
+    </div> -->
+    <div class="mdl-textfield mdl-textfield--floating-label mdl-textfield--align-left">
+      <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
+        <i class="material-icons">search</i>
+      </label>
+      <div class="mdl-textfield">
+        <input class="mdl-textfield__input" type="text" id="search-field">
+      </div>
     </div>
+    
+  	<a class="title mdl-layout-title" href="<?php echo $home; ?>">
+  		Donald E. Gruenberg
+  	</a>
+    <a href="<?php echo $sell; ?>"><button class="mdl-button mdl-button--colored mdl-js-button sell">Sell Your Watch or Jewelry</button></a>
     <nav>
-    	<a class="title mdl-layout-title" href="<?php echo $home; ?>">
-    		Donald E. Gruenberg
-    	</a>
     	<ul>
         <li><a class="mdl-navigation__link" href="<?php echo $story; ?>">Our Story</a></li>
         <li><a class="mdl-navigation__link" href="<?php echo $newarrivals; ?>">New Arrivals</a></li>
@@ -87,7 +97,6 @@
         <li><a class="mdl-navigation__link" href="<?php echo $contact; ?>">Contact</a></li>
       </ul>
     </nav>
-    <a href="<?php echo $sell; ?>"><button class="mdl-button mdl-button--colored mdl-js-button sell">Sell Your Watch or Jewelry</button></a>
   </div>
   <div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button">
     <i class="material-icons"></i>
@@ -95,11 +104,11 @@
       Donald E. Gruenberg
     </span> -->
   </div>
-  <div class="titleContainer">
-  	<a class="title mdl-layout-title" href="<?php echo $home; ?>">
-  		Donald E. Gruenberg
-  	</a>
-  </div>
+  <!-- <div class="titleContainer">
+    <a class="title mdl-layout-title" href="<?php echo $home; ?>">
+      Donald E. Gruenberg
+    </a>
+  </div> -->
 	<div class="mdl-layout__drawer">
 		<nav class="mdl-navigation">
 			<div class="mdl-textfield mdl-js-textfield search">
@@ -112,7 +121,7 @@
 			  <a class="mdl-navigation__link" href="<?php echo $watches; ?>">Jewelry</a>
 			  <a class="mdl-navigation__link" href="<?php echo $contact; ?>">Contact</a>
 	    </nav>
-	</div> 
+	</div>
 </div>
         	
 
