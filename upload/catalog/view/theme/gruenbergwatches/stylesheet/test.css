@@ -26,6 +26,7 @@ h5 {
   margin-bottom: 40px;
   top:0;
   z-index: 30;
+  position:relative;
   /*height:137px;*/
 }
 .mdl-layout__header-row {
@@ -140,7 +141,7 @@ nav ul li:hover ul.fallback {display:block;}
   font-weight:600;
 }
 .mdl-layout-spacer.product {
-  height:5  40px;
+  height:540px;
 }
 .sell {
   background: transparent;
@@ -356,7 +357,7 @@ nav ul li:hover ul.fallback {display:block;}
     width: 100%;
     margin:auto;
     z-index:10;
-    padding:20px;
+    padding:20px 20px 110px;
   }
   nav {
     margin:0 auto;

@@ -122,7 +122,7 @@
 			  <a class="mdl-navigation__link" href="<?php echo $contact; ?>">Contact</a>
 	    </nav>
 	</div>
-</div>
+
         	
 
 	
