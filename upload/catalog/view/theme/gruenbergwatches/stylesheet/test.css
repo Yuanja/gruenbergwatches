@@ -607,6 +607,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
       width:100%;
       text-align:center;
       display:inline;
+      background:#fff;
   }
   
   nav, .mdl-layout__header-row > .search, .sell, .bannerWrap {
