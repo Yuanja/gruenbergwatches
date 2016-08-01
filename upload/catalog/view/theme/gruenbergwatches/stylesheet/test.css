@@ -73,7 +73,7 @@ h5 {
 
   color:#666;
 }
-nav {background:#FFF;float:left;}
+nav {background:#FFF;margin:0 auto;}
 nav ul {text-align:center;margin:0;padding:0;}
 nav ul li {float:left;display:inline;}
 nav ul li:hover {}
@@ -502,7 +502,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
     }
   }
 
-@media (max-width: 1023px) {
+@media (max-width: 1022px) {
   .navigation-container {
       display: none;
   }
@@ -537,13 +537,6 @@ and (-webkit-min-device-pixel-ratio: 2) {
       font-size: 21px;
       padding: 0 0 0 20px;
   }
-}
-
-@media (max-width: 839px) and (min-width: 480px) {
-
-}
-
-@media (max-width: 1023px) {
     .mdl-layout__header-row .mdl-textfield {
       display:none;
     }
