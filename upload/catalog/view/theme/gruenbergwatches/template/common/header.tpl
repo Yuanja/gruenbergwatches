@@ -70,6 +70,14 @@
 </head>
 <body>
 <div class="mdl-layout mdl-js-layout mdl-layout--no-desktop-drawer-button">
+  <div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button">
+    <i class="material-icons"></i>
+  	<!-- <span class="title mdl-layout-title">
+      <a class="title mdl-layout-title" href="<?php echo $home; ?>">
+        Donald E. Gruenberg
+      </a>
+    </span> -->
+  </div>
   <div class="mdl-layout__header-row mdl-header">
     <!-- <div class="mdl-textfield mdl-js-textfield search">
       <input type="text" name="search" id="header-search" class="mdl-textfield__input" />
@@ -97,12 +105,6 @@
         <li><a class="mdl-navigation__link" href="<?php echo $contact; ?>">Contact</a></li>
       </ul>
     </nav>
-  </div>
-  <div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button">
-    <i class="material-icons"></i>
-  	<!-- <span class="title mdl-layout-title">
-      Donald E. Gruenberg
-    </span> -->
   </div>
   <!-- <div class="titleContainer">
     <a class="title mdl-layout-title" href="<?php echo $home; ?>">
