@@ -289,7 +289,7 @@ nav ul li:hover ul.fallback {display:block;}
   height:auto;
 }
 .watchesSrch {
-  margin: 10px auto 30px;
+  margin: 100px auto 30px;
   text-align: center;
 }
 .watchesSrch img {
@@ -526,6 +526,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
       width:100%;
       text-align:center;
       display:inline;
+      background:#fff;
   }
   nav {
     display:none;
