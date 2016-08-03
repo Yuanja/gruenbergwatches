@@ -506,6 +506,16 @@ and (-webkit-min-device-pixel-ratio: 2) {
   .navigation-container {
       display: none;
   }
+  .mdl-layout__drawer .mdl-navigation {
+      padding-top: 40px;
+  }
+  .mdl-textfield__label {
+    top:4px;
+  }
+  .mdl-textfield__input {
+    padding: 4px 0 4px 30px;
+    width: 190px;
+  }
   .banner {
     display:none;
   }
@@ -553,7 +563,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
     }
     .mdl-layout__drawer-button {
       background:#fff;
-      width:48px;
+      width: 12px;
       height:30px;
       position:fixed;
       top:0;
