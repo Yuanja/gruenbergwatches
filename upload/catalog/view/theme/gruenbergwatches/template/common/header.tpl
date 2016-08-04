@@ -96,7 +96,7 @@
   		Donald E. Gruenberg
   	</a>
     <a href="<?php echo $sell; ?>"><button class="mdl-button mdl-button--colored mdl-js-button sell">Sell Your Watch or Jewelry</button></a>
-    <nav>
+    <nav class="mdl-cell mdl-cell--12-col">
     	<ul>
         <li><a class="mdl-navigation__link" href="<?php echo $story; ?>">Our Story</a></li>
         <li><a class="mdl-navigation__link" href="<?php echo $newarrivals; ?>">New Arrivals</a></li>

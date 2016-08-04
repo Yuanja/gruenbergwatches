@@ -75,7 +75,7 @@ h5 {
 }
 nav {background:#FFF;margin:0 auto;}
 nav ul {text-align:center;margin:0;padding:0;}
-nav ul li {float:left;display:inline;}
+nav ul li {display: inline-block;}
 nav ul li:hover {}
 .mdl-layout__header-row .mdl-navigation__link {
   display:block;
@@ -358,6 +358,7 @@ nav ul li:hover ul.fallback {display:block;}
     margin:auto;
     z-index:10;
     padding:20px 20px 110px;
+    justify-content: space-between;
   }
   nav {
     margin:0 auto;
