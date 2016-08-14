@@ -129,7 +129,7 @@ nav ul li:hover ul.fallback {display:block;}
   bottom: -77px;
   padding: 20px 0;
 }
-.searchNav .wrapper {width:1210px;  justify-content: center;margin:0 auto;}
+.searchNav .wrapper {width:1210px; justify-content: center;margin:0 auto;}
 .searchNav a, .subHeader {
   font-size:18px;
   font-weight:200;
@@ -148,6 +148,24 @@ nav ul li:hover ul.fallback {display:block;}
 }
 .hero-container {
   position:relative;
+}
+.hero div {
+  background-size:cover;
+}
+.hero div.landingBkg {
+  background:url("../images/landingBkg.png") no-repeat center center;
+}
+.hero div.landingBkg2 {
+  background:url("../images/landingBkg2.png") no-repeat center center;
+}
+.hero div.landingBkg3 {
+  background:url("../images/landingBkg3.png") no-repeat center center;
+}
+.hero div.landingBkg4 {
+  background:url("../images/landingBkg4.png") no-repeat center center;
+}
+.slick-slide {
+  height:auto;
 }
 .slick-slide img {
   width:100%;
@@ -643,13 +661,19 @@ and (-webkit-min-device-pixel-ratio: 2) {
       top: 12px;
       font-size: 14px;
       padding: 0 0 0 20px;
-  }
-  }
+    }
+    .slick-track {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: block;
+        height: 635px;
+    }
   .slick-slider {
-      margin: 45px 0;
+    margin: 45px 0;
   }
   .slick-slide img {
-    width: 100%;
+    display:none;
   }
   .sell {
     position:relative;
@@ -676,5 +700,12 @@ and (-webkit-min-device-pixel-ratio: 2) {
   }
   h5 {
     margin: 60px 0 30px;
+  }
+  footer,
+  .mdl-layout__container {
+    margin:0;
+  }
+  .slick-slider {
+      margin: 45px 0 0;
   }
 }
