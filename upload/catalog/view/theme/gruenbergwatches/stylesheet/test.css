@@ -164,9 +164,7 @@ nav ul li:hover ul.fallback {display:block;}
 .hero div.landingBkg4 {
   background:url("../images/landingBkg4.png") no-repeat center center;
 }
-.slick-slide {
-  height:auto;
-}
+
 .slick-slide img {
   width:100%;
 }
