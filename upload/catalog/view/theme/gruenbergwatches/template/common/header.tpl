@@ -88,7 +88,7 @@
         <i class="material-icons">search</i>
       </label>
       <div class="mdl-textfield">
-        <input class="mdl-textfield__input" type="text" id="search-field">
+        <input class="mdl-textfield__input" type="text" id="header-search">
       </div>
     </div>
     
