@@ -84,7 +84,7 @@
       <label class="mdl-textfield__label" for="search"><img src="catalog/view/theme/gruenbergwatches/images/search.png"></label>
     </div> -->
     <div class="mdl-textfield mdl-textfield--floating-label mdl-textfield--align-left">
-      <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
+      <label class="mdl-button mdl-js-button mdl-button--icon" for="header-search">
         <i class="material-icons">search</i>
       </label>
       <div class="mdl-textfield">
@@ -114,8 +114,8 @@
 	<div class="mdl-layout__drawer">
 		<nav class="mdl-navigation">
 			<div class="mdl-textfield mdl-js-textfield search">
-				<input type="text" name="search" id="header-search" class="mdl-textfield__input" />
-				<label class="mdl-textfield__label" for="search"><img src="catalog/view/theme/gruenbergwatches/images/search.png"></label>
+				<input class="mdl-textfield__input" type="text" id="header-search" />
+				<label class="mdl-textfield__label" for="header-search"><img src="catalog/view/theme/gruenbergwatches/images/search.png"></label>
 			</div>
 			  <a class="mdl-navigation__link" href="<?php echo $story; ?>">Our Story</a>
 			  <a class="mdl-navigation__link" href="<?php echo $newarrivals; ?>">New Arrivals</a>

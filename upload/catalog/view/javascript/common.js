@@ -51,7 +51,7 @@ $(document).ready(function() {
 	})
 
 	/* Search */
-	$('#header-search').on('keydown', function(e) {
+	$('input#header-search').on('keydown', function(e) {
 		if (e.keyCode == 13) {
 			var url = $('base').attr('href') + 'index.php?route=product/search';
 
