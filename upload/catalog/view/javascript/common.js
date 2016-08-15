@@ -55,8 +55,7 @@ $(document).ready(function() {
 		if (e.keyCode == 13) {
 			var url = $('base').attr('href') + 'index.php?route=product/search';
 
-			var value = $('#header-search').val();
-
+			var value = $('input#header-search').val();
 			if (value) {
 				url += '&search=' + encodeURIComponent(value);
 			}
@@ -64,6 +63,19 @@ $(document).ready(function() {
 		}
 	});
 	
+	/* mobile Search */
+    $('input#header-search-mobile').on('keydown', function(e) {
+        if (e.keyCode == 13) {
+            var url = $('base').attr('href') + 'index.php?route=product/search';
+
+            var value = $('input#header-search-mobile').val();
+            if (value) {
+                url += '&search=' + encodeURIComponent(value);
+            }
+            location = url;
+        }
+    });
+    
 	$('#search input[name=\'search\']').parent().find('button').on('click', function() {
 		var url = $('base').attr('href') + 'index.php?route=product/search';
 

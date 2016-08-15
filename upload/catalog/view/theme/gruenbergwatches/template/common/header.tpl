@@ -114,8 +114,8 @@
 	<div class="mdl-layout__drawer">
 		<nav class="mdl-navigation">
 			<div class="mdl-textfield mdl-js-textfield search">
-				<input class="mdl-textfield__input" type="text" id="header-search" />
-				<label class="mdl-textfield__label" for="header-search"><img src="catalog/view/theme/gruenbergwatches/images/search.png"></label>
+				<input class="mdl-textfield__input" type="text" id="header-search-mobile">
+				<label class="mdl-textfield__label" for="header-search-mobile"><img src="catalog/view/theme/gruenbergwatches/images/search.png"></label>
 			</div>
 			  <a class="mdl-navigation__link" href="<?php echo $story; ?>">Our Story</a>
 			  <a class="mdl-navigation__link" href="<?php echo $newarrivals; ?>">New Arrivals</a>
