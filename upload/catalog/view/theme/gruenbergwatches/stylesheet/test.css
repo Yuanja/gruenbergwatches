@@ -146,6 +146,7 @@ nav ul li:hover ul.fallback {display:block;}
 .sell {
   background: transparent;
 }
+.mobileSell {display:none;}
 .hero-container {
   position:relative;
 }
@@ -665,7 +666,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
         top: 0;
         left: 0;
         display: block;
-        height: 635px;
+        height: 560px;
     }
   .slick-slider {
     margin: 45px 0;
@@ -706,4 +707,6 @@ and (-webkit-min-device-pixel-ratio: 2) {
   .slick-slider {
       margin: 45px 0 0;
   }
+  .mobileSell {display:block;margin:20px 0;}
+  .mobileSell .mdl-button.mdl-button--colored {display:block;}
 }
