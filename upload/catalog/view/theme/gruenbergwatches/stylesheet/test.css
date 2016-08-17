@@ -310,7 +310,8 @@ nav ul li:hover ul.fallback {display:block;}
   text-align: center;
 }
 .watchesSrch img {
-  height:14rem;
+  max-height:63rem;
+  width:100%;
   margin:0 0 20px;
 }
 .watchesSrch p {
@@ -348,7 +349,7 @@ nav ul li:hover ul.fallback {display:block;}
   font-size: .7rem;
   color: #000;
   margin: 0 auto;
-  padding:20px;
+  padding:20px 0;
   background:#fff;
   opacity:0.97;
 }
@@ -369,8 +370,8 @@ nav ul li:hover ul.fallback {display:block;}
 }
 @media screen and (min-width: 2500px) {
   .watchesSrch img {
-    height:700px;
-    width:690px;
+/*    height:700px;
+    width:690px;*/
     margin:0 0 20px;
   }
   .watchesSrch p {
