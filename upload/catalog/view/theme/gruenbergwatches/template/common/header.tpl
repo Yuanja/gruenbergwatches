@@ -35,8 +35,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/gruenbergwatches/stylesheet/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/gruenbergwatches/stylesheet/slick/slick-theme.css"/>
-<link rel="stylesheet" href="catalog/view/theme/gruenbergwatches/stylesheet/test.css">
-<script src="catalog/view/theme/gruenbergwatches/stylesheet/test.js"></script>
+<link rel="stylesheet" href="catalog/view/theme/gruenbergwatches/stylesheet/gruenbergwatches.css">
+<script src="catalog/view/theme/gruenbergwatches/stylesheet/gruenbergwatches.js"></script>
 <script type="text/javascript" src="catalog/view/theme/gruenbergwatches/stylesheet/slick/slick.min.js"></script>
 <style>
 #view-source {
