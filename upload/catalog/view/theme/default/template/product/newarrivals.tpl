@@ -1,17 +1,9 @@
 <?php echo $header; ?>
 <div class="mdl-layout__content products">
-<?php 
-	$chunkBy3Products = array_chunk($products, 3);
-
-	foreach ($chunkBy3Products as $productChunk) { 
-?>
-		<div class="mdl-grid watches">
-<?php 	foreach ($productChunk as $product) { ?>
-			<div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-phone"><image src="<?php echo $product['thumb']; ?>"></div>
+	<div class="mdl-grid watches">
+<?php 	foreach ($products as $product) { ?>
+			<image src="<?php echo $product['thumb']; ?>" />
 <?php   } ?>
-		</div>
-<?php
-	} 
-?>
+    </div>
 </div>
 <?php echo $footer; ?>

@@ -1,7 +1,7 @@
 <?php if ($products) { ?>
 <?php 
-	$chunkBy3Products = array_chunk($products, 4);
-	foreach ($chunkBy3Products as $productChunk) { 
+	$chunkBy4Products = array_chunk($products, 4);
+	foreach ($chunkBy4Products as $productChunk) { 
 ?> 
     <div class="mdl-grid watchesSrch">
 <?php 	
