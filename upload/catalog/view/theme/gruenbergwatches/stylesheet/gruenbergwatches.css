@@ -274,7 +274,7 @@ nav ul li:hover ul.fallback {display:block;}
   .mdl-layout__content>.mdl-grid {
     margin: 0 auto 40px;
     justify-content:center;
-    max-width:2184px;
+    max-width:1670px;
   }
   /*.products>.mdl-grid {
     max-width:800px;
@@ -312,8 +312,8 @@ nav ul li:hover ul.fallback {display:block;}
 }
 .watches img,
 .watchesSrch img {
-  max-height:63rem;
-  width:100%;
+  height:35rem;
+  width:auto;
   margin:0 0 20px;
 }
 .watchesSrch p {
