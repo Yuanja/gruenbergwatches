@@ -276,9 +276,9 @@ nav ul li:hover ul.fallback {display:block;}
     justify-content:center;
     max-width:2184px;
   }
-  .products>.mdl-grid {
+  /*.products>.mdl-grid {
     max-width:800px;
-  }
+  }*/
   .section__block {
     width: 400px;
     padding: 0px 45px;
@@ -296,7 +296,7 @@ nav ul li:hover ul.fallback {display:block;}
     border-bottom:1px solid #000;
     margin: 0 0 30px;
 }
-.watches {
+/*.watches {
   max-width:628px;
   margin:0 auto;
   text-align: center;
@@ -304,11 +304,13 @@ nav ul li:hover ul.fallback {display:block;}
 .watches img {
   max-width:100%;
   height:auto;
-}
+}*/
+.watches,
 .watchesSrch {
   margin: 100px auto 30px;
   text-align: center;
 }
+.watches img,
 .watchesSrch img {
   max-height:63rem;
   width:100%;
