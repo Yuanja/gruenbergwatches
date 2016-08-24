@@ -1,19 +1,7 @@
 <?php if ($products) { ?>
-<?php 
-	$chunkBy4Products = array_chunk($products, 4);
-	foreach ($chunkBy4Products as $productChunk) { 
-?> 
-    <div class="mdl-grid watchesSrch">
-<?php 	
-		foreach ($productChunk as $product) { ?>
-		  <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-tablet mdl-cell--3-col-phone">
-		    <image src="<?php echo $product['thumb']; ?>">
-		    <p><?php echo $product['name'] ?></p>
-		    <p><?php if ($product['price'] != "$0.00") echo $product['price'] ?></p>
-		  </div>
-<?php   } ?>
-	</div>
-<?php
-	} 
-}
-?>
+    <?php foreach ($products as $product) { ?>
+    	<image src="<?php echo $product['thumb']; ?>">
+    	<p><?php echo $product['name'] ?></p>
+    	<p><?php if ($product['price'] != "$0.00") echo $product['price'] ?></p>
+    <?php } ?>
+<?php } ?>
