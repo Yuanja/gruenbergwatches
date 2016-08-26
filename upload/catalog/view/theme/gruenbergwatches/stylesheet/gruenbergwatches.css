@@ -154,7 +154,7 @@ nav ul li:hover ul.fallback {display:block;}
   background-size:cover;
 }
 .hero div.landingBkg {
-  background:url("../images/landingBkg.png") no-repeat center center;
+  background:url("../images/landingBkg1.png") no-repeat center center;
 }
 .hero div.landingBkg2 {
   background:url("../images/landingBkg2.png") no-repeat center center;
