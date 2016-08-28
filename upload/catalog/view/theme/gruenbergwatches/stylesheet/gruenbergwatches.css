@@ -269,7 +269,7 @@ nav ul li:hover ul.fallback {display:block;}
       background-color: transparent;
   }
   .products {
-    margin:150px 0 80px;
+    margin:0 0 20px;
   }
   .mdl-layout__content>.mdl-grid {
     margin: 0 auto 40px;
@@ -312,9 +312,9 @@ nav ul li:hover ul.fallback {display:block;}
 }
 .watches img,
 .watchesSrch img {
-  height:25rem;
-  width:auto;
-  margin:0 0 20px;
+  height: 24rem;
+  width: auto;
+  margin: 0 10px 20px 0;
 }
 .watches img {
   height:30rem;
@@ -403,7 +403,7 @@ nav ul li:hover ul.fallback {display:block;}
   }
   #searchoutput {
     /*margin: 350px 0 0;*/
-    margin: 80px 0 0;
+    margin: 150px 0 0;
     justify-content:center;
   }
 }
