@@ -276,9 +276,9 @@ nav ul li:hover ul.fallback {display:block;}
     justify-content:center;
     max-width:1670px;
   }
-  /*.products>.mdl-grid {
-    max-width:800px;
-  }*/
+  .products .watches {
+    margin:150px 0 0;
+  }
   .section__block {
     width: 400px;
     padding: 0px 45px;
