@@ -108,10 +108,10 @@ nav ul li:hover ul.fallback {display:block;}
 }
 .bannerWrap {
   width: 100%;
-  height: auto;
+  height: 40px;
   position: fixed;
   z-index: 9;
-  top:0;
+  top: 130px;
 }
 .banner {
 /*  margin: 11.4em 0 0;
@@ -123,11 +123,8 @@ nav ul li:hover ul.fallback {display:block;}
 }
 .searchNav {
   width: 100%;
-  background:#fff;
+  background: #fff;
   text-align: center;
-  position: absolute;
-  bottom: -77px;
-  padding: 20px 0;
 }
 .searchNav .wrapper {width:1210px; justify-content: center;margin:0 auto;}
 .searchNav a, .subHeader {
@@ -282,7 +279,7 @@ nav ul li:hover ul.fallback {display:block;}
   .section__block {
     width: 400px;
     padding: 0px 45px;
-    margin: 150px 7px 50px;
+    margin: 0 7px;
   }
   .section__block p {
     font-size: 16px;
@@ -403,7 +400,7 @@ nav ul li:hover ul.fallback {display:block;}
   }
   #searchoutput {
     /*margin: 350px 0 0;*/
-    margin: 150px 0 0;
+    margin: 180px 0 0;
     justify-content:center;
   }
 }
