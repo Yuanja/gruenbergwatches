@@ -101,7 +101,7 @@
         <li><a class="mdl-navigation__link" href="<?php echo $story; ?>">Our Story</a></li>
         <li><a class="mdl-navigation__link" href="<?php echo $newarrivals; ?>">New Arrivals</a></li>
         <li><a class="mdl-navigation__link" href="<?php echo $watches; ?>">Watches</a></li>
-        <li><a class="mdl-navigation__link" href="<?php echo $watches; ?>">Jewelry</a></li>
+        <li><a class="mdl-navigation__link" href="<?php echo $jewelry; ?>">Jewelry</a></li>
         <li><a class="mdl-navigation__link" href="<?php echo $contact; ?>">Contact</a></li>
       </ul>
     </nav>
@@ -120,7 +120,7 @@
 			  <a class="mdl-navigation__link" href="<?php echo $story; ?>">Our Story</a>
 			  <a class="mdl-navigation__link" href="<?php echo $newarrivals; ?>">New Arrivals</a>
 			  <a class="mdl-navigation__link" href="<?php echo $watches; ?>">Watches</a>
-			  <a class="mdl-navigation__link" href="<?php echo $watches; ?>">Jewelry</a>
+			  <a class="mdl-navigation__link" href="<?php echo $jewelry; ?>">Jewelry</a>
 			  <a class="mdl-navigation__link" href="<?php echo $contact; ?>">Contact</a>
 	    </nav>
 	</div>

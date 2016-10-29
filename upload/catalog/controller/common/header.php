@@ -89,7 +89,8 @@ class ControllerCommonHeader extends Controller {
 		$data['story'] = $this->url->link('information/story', '', true);
 		$data['contact'] = $this->url->link('information/contact');
 		$data['newarrivals'] = $this->url->link('product/newarrivals', '', true);
-		$data['watches'] = $this->url->link('product/search', 'sort=p.sku&order=DESC', true);
+		$data['watches'] = $this->url->link('product/search', 'tag=Watches&sort=p.sku&order=DESC', true);
+		$data['jewelry'] = $this->url->link('product/search', 'tag=Jewelry&sort=p.sku&order=DESC', true);
 		$data['sell'] = $this->url->link('information/sell', '', true);
 		
 		// Menu

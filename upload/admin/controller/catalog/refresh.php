@@ -33,8 +33,14 @@ class ControllerCatalogRefresh extends Controller {
 			"Breitling" => 9,
 			"A. Lange & Sohne" => 10,
 			"Piaget" => 11,
-			"Other Brands" => 12000
-		);
+			"Other Brands" => 12000 );
+	
+	//Product type categories
+	private $productTypeCategoryNames = array(
+			"Watch" => 13000,
+			"Jewelry" => 1400,
+			"Loose Stones" => 1500	
+	);
 	
 	private $otherBrands = array(
 		"Abercrombie & Fitch", "Alain Silberstein", "Betteridge", "Boucheron","Bucherer","Bueche Girod","Carl Bucherer",
@@ -113,7 +119,7 @@ class ControllerCatalogRefresh extends Controller {
 							'timeout' => 1200,  //1200 Seconds is 20 Minutes
 					)
 			));
-   		$this->url_get_contents('/tmp/tmpout.xml', FEED_URL);
+   			$this->url_get_contents('/tmp/tmpout.xml', FEED_URL);
 		}
 		$xml = simplexml_load_file('/tmp/tmpout.xml');
 		$recordValueRegArray = $this->getRecordValueRegArray($xml);
@@ -352,7 +358,7 @@ class ControllerCatalogRefresh extends Controller {
 		$allCats = array_merge($brandModelCategory, $otherBrandCategory );
 		return array_unique($allCats);
 	}
-
+	
 	private function ensureCategories($categoryString){
 		//load the cache
 		$this->primeCategoryCache();
@@ -493,7 +499,7 @@ class ControllerCatalogRefresh extends Controller {
 				. "language_id = '1', "
 				. "name ='". $this->db->escape($this->getNonNullString($changedRecordReg->get("web_description_short"))) . "', "
 				. "description = '".$this->db->escape($this->getNonNullString($changedRecordReg->get("web_description_long")))."', "
-				. "tag = '', meta_title = '".$this->db->escape($this->getNonNullString($changedRecordReg->get("web_description_short")))."', meta_description = '', meta_keyword = ''"
+				. "tag = '".$changedRecordReg->get("web_category")."', meta_title = '".$this->db->escape($this->getNonNullString($changedRecordReg->get("web_description_short")))."', meta_description = '', meta_keyword = ''"
 				);
 		
 		//Insert the category information for product

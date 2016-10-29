@@ -466,6 +466,7 @@ class ControllerProductSearch extends Controller {
 		$data['price_asc_link'] = $this->url->link('product/search', 'sort=p.price&order=ASC');
 		$data['price_desc_link'] = $this->url->link('product/search', 'sort=p.price&order=DESC');
 		
+		$data['tag'] = $tag;
 		$data['sort'] = $sort;
 		$data['order'] = $order;
 		$data['limit'] = $limit;
