@@ -108,10 +108,10 @@ nav ul li:hover ul.fallback {display:block;}
 }
 .bannerWrap {
   width: 100%;
-  height: auto;
+  height: 40px;
   position: fixed;
   z-index: 9;
-  top:0;
+  top: 130px;
 }
 .banner {
 /*  margin: 11.4em 0 0;
@@ -123,11 +123,8 @@ nav ul li:hover ul.fallback {display:block;}
 }
 .searchNav {
   width: 100%;
-  background:#fff;
+  background: #fff;
   text-align: center;
-  position: absolute;
-  bottom: -77px;
-  padding: 20px 0;
 }
 .searchNav .wrapper {width:1210px; justify-content: center;margin:0 auto;}
 .searchNav a, .subHeader {
@@ -154,7 +151,7 @@ nav ul li:hover ul.fallback {display:block;}
   background-size:cover;
 }
 .hero div.landingBkg {
-  background:url("../images/landingBkg.png") no-repeat center center;
+  background:url("../images/landingBkg1.png") no-repeat center center;
 }
 .hero div.landingBkg2 {
   background:url("../images/landingBkg2.png") no-repeat center center;
@@ -269,20 +266,20 @@ nav ul li:hover ul.fallback {display:block;}
       background-color: transparent;
   }
   .products {
-    margin:150px 0 80px;
+    margin:0 0 20px;
   }
   .mdl-layout__content>.mdl-grid {
     margin: 0 auto 40px;
     justify-content:center;
     max-width:1670px;
   }
-  /*.products>.mdl-grid {
-    max-width:800px;
-  }*/
+  .products .watches {
+    margin:150px 0 0;
+  }
   .section__block {
     width: 400px;
     padding: 0px 45px;
-    margin: 150px 7px 50px;
+    margin: 0 7px;
   }
   .section__block p {
     font-size: 16px;
@@ -312,9 +309,9 @@ nav ul li:hover ul.fallback {display:block;}
 }
 .watches img,
 .watchesSrch img {
-  height:25rem;
-  width:auto;
-  margin:0 0 20px;
+  height: 23rem;
+  width: auto;
+  margin: 0 10px 20px 0;
 }
 .watches img {
   height:30rem;
@@ -403,7 +400,7 @@ nav ul li:hover ul.fallback {display:block;}
   }
   #searchoutput {
     /*margin: 350px 0 0;*/
-    margin: 80px 0 0;
+    margin: 180px 0 0;
     justify-content:center;
   }
 }
@@ -633,7 +630,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
       margin: 30px 0 40px;
     }
     .products {
-        margin: 50px 0 80px;
+        margin: 50px auto 80px;
     }
     .mdl-button.mdl-button--colored {
       font-weight: 400;
