@@ -468,7 +468,7 @@ class ControllerCatalogRefresh extends Controller {
 				."date_available = NOW(), "  
 				."manufacturer_id = '" . (int)$manufacture_id ."', " 
 				."shipping = '0', "  
-				."price = '" . (float)str_replace("$", "", $changedRecordReg->get('web_price_retail')). "', " 
+				."price = '" . (float)str_replace("$", "", $changedRecordReg->get('web_retail')). "', " 
 				."points = '0', "  
 				."weight = '0', "   
 				."weight_class_id = '1', "  
