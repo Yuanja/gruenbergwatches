@@ -2,7 +2,7 @@
 //URL parameters options: testing=1 sets the test mode which loads full feed but only gets 100 watches.
 //reloadLastFeed=1 skips the feed xml download and reuse the last one.
 //clear=1 cleans up the catalog
-//Sample http://localhost/gruenbergwatches/admin/index.php?route=catalog/refresh&reloadLastFeed=1&clear=1&testing=1
+//Sample http://localhost/gruenbergwatches/admin/index.php?route=catalog/refresh&clear=1&testing=1&reloadLastFeed=1&
 
 define("CATEGORY_DELIMETER", "&nbsp;&nbsp;&gt;&nbsp;&nbsp;");
 define("WATCH_ATTRIBUTE_GROUP", "Watch attributes");
@@ -573,9 +573,10 @@ class ControllerCatalogRefresh extends Controller {
 		
 		foreach ($recordValueRegArray as $recordReg){
 			//Only do this if it's for retail
+			$web_item_number = $recordReg->get('web_tag_number');
 			if ($recordReg->get('web_flag_retail') == '1'){
 				//This is the identifier in FM that won't change between the load.
-				$web_item_number = $recordReg->get('web_tag_number');
+				
 				if ($web_item_number){
 					$filter_data = array(
 							'filter_web_item_number'	  => $web_item_number,
