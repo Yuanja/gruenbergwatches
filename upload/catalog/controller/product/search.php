@@ -461,10 +461,10 @@ class ControllerProductSearch extends Controller {
 		$data['sub_category'] = $sub_category;
 
 		//Additional links
-		$data['brandasc_link'] = $this->url->link('product/search', 'sort=m.name&order=ASC');
-		$data['newest_link'] = $this->url->link('product/search', 'sort=p.sku&order=DESC');
-		$data['price_asc_link'] = $this->url->link('product/search', 'sort=p.price&order=ASC');
-		$data['price_desc_link'] = $this->url->link('product/search', 'sort=p.price&order=DESC');
+		$data['brandasc_link'] = $this->url->link('product/search', 	'tag='.$tag.'&sort=m.name&order=ASC');
+		$data['newest_link'] = $this->url->link('product/search', 		'tag='.$tag.'&sort=p.sku&order=DESC');
+		$data['price_asc_link'] = $this->url->link('product/search',	'tag='.$tag.'&sort=p.price&order=ASC');
+		$data['price_desc_link'] = $this->url->link('product/search', 	'tag='.$tag.'&sort=p.price&order=DESC');
 		
 		$data['tag'] = $tag;
 		$data['sort'] = $sort;
