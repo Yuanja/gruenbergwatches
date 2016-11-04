@@ -2,7 +2,7 @@
 //URL parameters options: testing=1 sets the test mode which loads full feed but only gets 100 watches.
 //reloadLastFeed=1 skips the feed xml download and reuse the last one.
 //clear=1 cleans up the catalog
-//Sample http://localhost/gruenbergwatches/admin/index.php?route=catalog/refresh&reloadLastFeed=1&clear=1&testing=1
+//Sample http://localhost/gruenbergwatches/admin/index.php?route=catalog/refresh&clear=1&testing=1&reloadLastFeed=1&
 
 define("CATEGORY_DELIMETER", "&nbsp;&nbsp;&gt;&nbsp;&nbsp;");
 define("WATCH_ATTRIBUTE_GROUP", "Watch attributes");
@@ -33,8 +33,14 @@ class ControllerCatalogRefresh extends Controller {
 			"Breitling" => 9,
 			"A. Lange & Sohne" => 10,
 			"Piaget" => 11,
-			"Other Brands" => 12000
-		);
+			"Other Brands" => 12000 );
+	
+	//Product type categories
+	private $productTypeCategoryNames = array(
+			"Watch" => 13000,
+			"Jewelry" => 1400,
+			"Loose Stones" => 1500	
+	);
 	
 	private $otherBrands = array(
 		"Abercrombie & Fitch", "Alain Silberstein", "Betteridge", "Boucheron","Bucherer","Bueche Girod","Carl Bucherer",
@@ -113,7 +119,7 @@ class ControllerCatalogRefresh extends Controller {
 							'timeout' => 1200,  //1200 Seconds is 20 Minutes
 					)
 			));
-   		$this->url_get_contents('/tmp/tmpout.xml', FEED_URL);
+   			$this->url_get_contents('/tmp/tmpout.xml', FEED_URL);
 		}
 		$xml = simplexml_load_file('/tmp/tmpout.xml');
 		$recordValueRegArray = $this->getRecordValueRegArray($xml);
@@ -352,7 +358,7 @@ class ControllerCatalogRefresh extends Controller {
 		$allCats = array_merge($brandModelCategory, $otherBrandCategory );
 		return array_unique($allCats);
 	}
-
+	
 	private function ensureCategories($categoryString){
 		//load the cache
 		$this->primeCategoryCache();
@@ -493,7 +499,7 @@ class ControllerCatalogRefresh extends Controller {
 				. "language_id = '1', "
 				. "name ='". $this->db->escape($this->getNonNullString($changedRecordReg->get("web_description_short"))) . "', "
 				. "description = '".$this->db->escape($this->getNonNullString($changedRecordReg->get("web_description_long")))."', "
-				. "tag = '', meta_title = '".$this->db->escape($this->getNonNullString($changedRecordReg->get("web_description_short")))."', meta_description = '', meta_keyword = ''"
+				. "tag = '".$changedRecordReg->get("web_category")."', meta_title = '".$this->db->escape($this->getNonNullString($changedRecordReg->get("web_description_short")))."', meta_description = '', meta_keyword = ''"
 				);
 		
 		//Insert the category information for product
@@ -566,26 +572,32 @@ class ControllerCatalogRefresh extends Controller {
 		$this->load->model('catalog/product');
 		
 		foreach ($recordValueRegArray as $recordReg){
-			//This is the identifier in FM that won't change between the load.
+			//Only do this if it's for retail
 			$web_item_number = $recordReg->get('web_tag_number');
-			if ($web_item_number){
-				$filter_data = array(
-						'filter_web_item_number'	  => $web_item_number,
-				);
-				$products = $this->model_catalog_product->getProducts($filter_data);
+			if ($recordReg->get('web_flag_retail') == '1'){
+				//This is the identifier in FM that won't change between the load.
 				
-				if (!$products){
-					$this->echoFlush("NEW web_tag_number: ".$web_item_number." : ".$recordReg->get("web_description_short"));
-					$changedRecord[$index] = $recordReg;
-					$index += 1;
-				} elseif ($products && $this->hasChanged($products[0], $recordReg)){
-					$this->echoFlush("CHANGED web_tag_number: ".$web_item_number." : ".$recordReg->get("web_description_short"));
-					$changedRecord[$index] = $recordReg;
-					$recordReg->set('current_product', $products[0] );
-					$index += 1;
-				} else {
-					$this->echoFlush("NO CHANGES DETECTED web_tag_number: ".$web_item_number." : ".$recordReg->get("web_description_short"));
+				if ($web_item_number){
+					$filter_data = array(
+							'filter_web_item_number'	  => $web_item_number,
+					);
+					$products = $this->model_catalog_product->getProducts($filter_data);
+					
+					if (!$products){
+						$this->echoFlush("NEW web_tag_number: ".$web_item_number." : ".$recordReg->get("web_description_short"));
+						$changedRecord[$index] = $recordReg;
+						$index += 1;
+					} elseif ($products && $this->hasChanged($products[0], $recordReg)){
+						$this->echoFlush("CHANGED web_tag_number: ".$web_item_number." : ".$recordReg->get("web_description_short"));
+						$changedRecord[$index] = $recordReg;
+						$recordReg->set('current_product', $products[0] );
+						$index += 1;
+					} else {
+						$this->echoFlush("NO CHANGES DETECTED web_tag_number: ".$web_item_number." : ".$recordReg->get("web_description_short"));
+					}
 				}
+			} else {
+				$this->echoFlush("NOT FOR RETAIL: ".$web_item_number);
 			}
 		}
 		return $changedRecord;
@@ -597,7 +609,9 @@ class ControllerCatalogRefresh extends Controller {
 		$dbSkuArray = array();
 		
 		foreach ($recordValueRegArray as $recordReg){
-			array_push($feedSkuArray, $recordReg->get('web_tag_number'));
+			if ($recordReg->get('web_flag_retail') == '1'){
+				array_push($feedSkuArray, $recordReg->get('web_tag_number'));
+			}
 		}
 		
 		$this->load->model('catalog/product');

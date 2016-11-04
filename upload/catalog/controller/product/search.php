@@ -252,6 +252,12 @@ class ControllerProductSearch extends Controller {
 			} else {
 				$rating = false;
 			}
+			
+			if ($result['sku']) {
+				$sku = $result['sku'];
+			} else {
+				$sku = "0000000";
+			}
 
 			$data['products'][] = array(
 				'product_id'  => $result['product_id'],
@@ -263,7 +269,8 @@ class ControllerProductSearch extends Controller {
 				'tax'         => $tax,
 				'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,
 				'rating'      => $result['rating'],
-				'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url)
+				'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url),
+				'sku'         => $sku
 			);
 		}
 
@@ -461,11 +468,12 @@ class ControllerProductSearch extends Controller {
 		$data['sub_category'] = $sub_category;
 
 		//Additional links
-		$data['brandasc_link'] = $this->url->link('product/search', 'sort=m.name&order=ASC');
-		$data['newest_link'] = $this->url->link('product/search', 'sort=p.sku&order=DESC');
-		$data['price_asc_link'] = $this->url->link('product/search', 'sort=p.price&order=ASC');
-		$data['price_desc_link'] = $this->url->link('product/search', 'sort=p.price&order=DESC');
+		$data['brandasc_link'] = $this->url->link('product/search', 	'tag='.$tag.'&sort=m.name&order=ASC');
+		$data['newest_link'] = $this->url->link('product/search', 		'tag='.$tag.'&sort=p.sku&order=DESC');
+		$data['price_asc_link'] = $this->url->link('product/search',	'tag='.$tag.'&sort=p.price&order=ASC');
+		$data['price_desc_link'] = $this->url->link('product/search', 	'tag='.$tag.'&sort=p.price&order=DESC');
 		
+		$data['tag'] = $tag;
 		$data['sort'] = $sort;
 		$data['order'] = $order;
 		$data['limit'] = $limit;
