@@ -252,6 +252,12 @@ class ControllerProductSearch extends Controller {
 			} else {
 				$rating = false;
 			}
+			
+			if ($result['sku']) {
+				$sku = $result['sku'];
+			} else {
+				$sku = "0000000";
+			}
 
 			$data['products'][] = array(
 				'product_id'  => $result['product_id'],
@@ -263,7 +269,8 @@ class ControllerProductSearch extends Controller {
 				'tax'         => $tax,
 				'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,
 				'rating'      => $result['rating'],
-				'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url)
+				'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url),
+				'sku'         => $sku
 			);
 		}
 
