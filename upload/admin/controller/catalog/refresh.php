@@ -6,9 +6,11 @@
 
 define("CATEGORY_DELIMETER", "&nbsp;&nbsp;&gt;&nbsp;&nbsp;");
 define("WATCH_ATTRIBUTE_GROUP", "Watch attributes");
-define("SOURCE_IP", "107.197.220.126");
 define("IMAGE_URL_BASE", "catalog/watches");
 define("DOWNLOAD_DIR", DIR_IMAGE.IMAGE_URL_BASE);
+
+// Complete feed URL: https://107.197.220.126/fmi/xml/fmresultset.xml?-db=DEG&-lay=WEB_XML&-find&web_flag__c.op=eq&web_flag__c=1
+define("SOURCE_IP", "107.197.220.126");
 define("FEED_URL", "https://".SOURCE_IP."/fmi/xml/fmresultset.xml?-db=DEG&-lay=WEB_XML&-find&web_flag__c.op=eq&web_flag__c=1");
 
 class ControllerCatalogRefresh extends Controller {
@@ -445,13 +447,24 @@ class ControllerCatalogRefresh extends Controller {
 		}
 	}
 	
+	private function getStockStatusFromRecord($changedRecordReg){
+		$web_status = $changedRecordReg->get("web_status");
+		if ($web_status == 'Available'){
+			$stock_status_id = 7; //in stock
+		} elseif ($web_status == 'On Memo'){
+			$stock_status_id = 6; //2-3 days
+		} elseif ($web_status == 'Sold'){
+			$stock_status_id = 5; //out of stock
+		}
+	}
+	
 	private function insertNewProduct($changedRecordReg, $categoryIds, $allProductAttributes, $allImagePaths){
 		
 		//Get manufacture_id, if one doesn't exist add it.
 		$manufacture_id = $this->ensureManufacturerId($changedRecordReg->get("web_designer"));
 		
-		//Take the first one as Image for the product home.  TODO: potentially tweak this more consistent.
-		$stock_status_id = $changedRecordReg->get("web_status") == "Available" ? "7" : "8";
+		$stock_status_id = $this->getStockStatusFromRecord($changedRecordReg);
+		
 		$this->db->query("INSERT INTO " . DB_PREFIX . "product ". 
 				"SET model = '" .$this->db->escape($this->getNonNullString($changedRecordReg->get("web_watch_model"))). "', " 
 				."sku = '" .$this->db->escape($this->getNonNullString($changedRecordReg->get("web_tag_number"))). "', " 
@@ -641,11 +654,10 @@ class ControllerCatalogRefresh extends Controller {
 		}
 		
 		$product_stock_status = $product['stock_status_id'];
-		$web_status = $recordReg->get('web_status');
 		
-		if (($web_status == "Available" && $product_stock_status != 7) ||
-			 ($web_status == "On Memo" && $product_stock_status != 8))
-		{
+		//Check for status change
+		$record_status_id = $this->getStockStatusFromRecord($recordReg);
+		if ($record_status_id != $product_stock_status){
 			return true;
 		}
 		
@@ -690,7 +702,6 @@ class ControllerCatalogRefresh extends Controller {
 		if ($xml){
 			$recordByWebIDMap = array();
 			$xmlRecords = $xml->resultset->children();
-			$recordIDList = array(); //This is used to track duplicated record ids in the feed.  
 			
 			foreach ($xmlRecords as $xmlRecord){
 				//Get all fields
@@ -699,15 +710,11 @@ class ControllerCatalogRefresh extends Controller {
 					$fieldValueReg->set((string)$field['name'], (string)$field->data);
 				}
 				
-				//Filter out item_status with sold or void.
-				$web_status = $fieldValueReg->get('web_status');
 				$web_tag_number = $fieldValueReg->get('web_tag_number');
-				if (isset($web_status) && ($web_status == "Available" || $web_status == "On Memo")){
-					if(array_key_exists($web_tag_number, $recordByWebIDMap)){
-						$this->echoFlush("WARNING Duplicate records found! ".$web_tag_number);
-					} else {
-						$recordByWebIDMap[$web_tag_number] = $fieldValueReg;
-					}
+				if(array_key_exists($web_tag_number, $recordByWebIDMap)){
+					$this->echoFlush("WARNING: Duplicate records found in feed! ".$web_tag_number);
+				} else {
+					$recordByWebIDMap[$web_tag_number] = $fieldValueReg;
 				}
 			}
 			return array_values($recordByWebIDMap);

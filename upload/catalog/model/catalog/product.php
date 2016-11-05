@@ -166,16 +166,19 @@ class ModelCatalogProduct extends Model {
 			'm.name'
 		);
 
+		//Justin wants to see all results filtered based on stock status: avialable -> on memo -> sold
+		$orderByStockStatusDescClause = ' stock_status_id DESC, ';
+			
 		if (isset($data['sort']) && in_array($data['sort'], $sort_data)) {
 			if ($data['sort'] == 'pd.name' || $data['sort'] == 'p.model') {
-				$sql .= " ORDER BY LCASE(" . $data['sort'] . ")";
+				$sql .= " ORDER BY ".$orderByStockStatusDescClause." LCASE(" . $data['sort'] . ")";
 			} elseif ($data['sort'] == 'p.price') {
-				$sql .= " ORDER BY (CASE WHEN special IS NOT NULL THEN special WHEN discount IS NOT NULL THEN discount ELSE p.price END)";
+				$sql .= " ORDER BY ".$orderByStockStatusDescClause." (CASE WHEN special IS NOT NULL THEN special WHEN discount IS NOT NULL THEN discount ELSE p.price END)";
 			} else {
-				$sql .= " ORDER BY " . $data['sort'];
+				$sql .= " ORDER BY ".$orderByStockStatusDescClause.$data['sort'];
 			}
 		} else {
-			$sql .= " ORDER BY p.sort_order";
+			$sql .= " ORDER BY ".$orderByStockStatusDescClause." p.sort_order";
 		}
 
 		if (isset($data['order']) && ($data['order'] == 'DESC')) {
