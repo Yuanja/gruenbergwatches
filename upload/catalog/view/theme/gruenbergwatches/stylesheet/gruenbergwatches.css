@@ -271,10 +271,10 @@ nav ul li:hover ul.fallback {display:block;}
   .mdl-layout__content>.mdl-grid {
     margin: 0 auto 40px;
     justify-content:center;
-    max-width:1670px;
+    max-width:2149px;
   }
   .products .watches {
-    margin:150px 0 0;
+    margin:150px auto 0;
   }
   .section__block {
     width: 400px;
