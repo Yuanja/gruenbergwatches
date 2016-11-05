@@ -29,28 +29,28 @@
 </body>
 
 <script type="text/javascript">
-var nextpage = <?php echo $page ?>;
+var nextpage = <?php echo $page ?> + 1;
 $(document).ready(function() {
-	$(window).scroll(function() {
-	   if(parseFloat($(window).scrollTop()) + parseFloat($(window).height()) == parseFloat($(document).height())) {
-		   $.ajax(
-		      {
-			      url: 'index.php?route=product/search',
-			   	  type: 'get',
-			      data: {minoutput : '1',
-			          tag : '<?php echo $tag ?>',
-			    	  sort : '<?php echo $sort ?>',
-			    	  order : '<?php echo $order ?>',
-			    	  page : nextpage},
-			      complete: function() {
-			    	nextpage = nextpage + 1;
-			      },
-			      success: function(output) {
-			    	$('#searchoutput').append(output); 
-			      }
-		      }
-	       );
-	   }
-	});
+    $(window).scroll(function() {
+       if(parseFloat($(window).scrollTop()) + parseFloat($(window).height()) == parseFloat($(document).height())) {
+           $.ajax(
+              {
+                  url: 'index.php?route=product/search',
+                  type: 'get',
+                  data: {minoutput : '1',
+                      tag : '<?php echo $tag ?>',
+                      sort : '<?php echo $sort ?>',
+                      order : '<?php echo $order ?>',
+                      page : nextpage},
+                  complete: function() {
+                    nextpage = nextpage + 1;
+                  },
+                  success: function(output) {
+                    $('#searchoutput').append(output); 
+                  }
+              }
+           );
+       }
+    });
 });
 </script>
